@@ -1,5 +1,5 @@
-/home/kleymuner2131/CLionProjects/QT_GUI project/cmake-build-debug/CMakeFiles/QT_GUI_project.dir
-/home/kleymuner2131/CLionProjects/QT_GUI project/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/kleymuner2131/CLionProjects/QT_GUI project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/kleymuner2131/CLionProjects/QT_GUI project/cmake-build-debug/CMakeFiles/QT_GUI_project_autogen_timestamp_deps.dir
-/home/kleymuner2131/CLionProjects/QT_GUI project/cmake-build-debug/CMakeFiles/QT_GUI_project_autogen.dir
+/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/QT_GUI_project.dir
+/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/QT_GUI_project_autogen_timestamp_deps.dir
+/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/QT_GUI_project_autogen.dir
