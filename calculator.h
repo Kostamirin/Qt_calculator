@@ -34,21 +34,21 @@ bool bracketsBalanced(const std::string& input)
 
 std::vector<std::string> analitic_make(std::string main)
 {
-    constexpr char allowedOperators[] = {'+', '-', '*', '/', '(', ')'};    std::vector<std::string> result = {};
+    constexpr char chars[] = {'+', '-', '*', '/', '(', ')'};
+    std::vector<std::string> result = {};
     std::string number = "";
-    for (int i = 0; i < main.size(); i++)
+    for (char ch : main)
     {
         // Если символ не нашелся, то:
-        if (std::find(std::begin(allowedOperators),
-            std::end(allowedOperators), main[i]) == std::end(allowedOperators))
+        if (std::find(std::begin(chars), std::end(chars), ch) == std::end(chars))
         {
-            number += main[i];
+            number += ch;
         }
         else
         {
             result.push_back(number);
             number = "";
-            result.push_back(std::string(1, main[i]));
+            result.push_back(std::string(1, ch));
         }
     }
     return result;
