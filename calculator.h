@@ -34,17 +34,18 @@ std::vector<std::string> analitic_make(std::string main)
 {
     const char chars[6] = {'*', '/', '+', '-', '(', ')'};
     std::vector<std::string> result;
-    std::string number;
+    std::string number = "";
     for (int i = 0; i < main.size(); i++)
     {
-        if (std::find(chars, chars + 6, main[i]) == std::end(chars))
+        // Если символ не нашелся, то:
+        if (std::find(std::begin(chars), std::end(chars), main[i]) == std::end(chars))
         {
             number += main[i];
         }
         else
         {
-            if (number != ""){result.push_back(number); number = "";}
-            else {result.push_back(std::string(1, main[i]));}
+            if (number != ""){result.push_back(number);number = "";}
+            result.push_back(std::to_string(main[i]));
         }
     }
     return result;
@@ -52,7 +53,7 @@ std::vector<std::string> analitic_make(std::string main)
 //! Эта функция должна расставлять приоритеры подсчета, действие за действием решая их
 float analitic_prioritet(std::vector<std::string> analized)
 {
-    float answer;
+    float answer = 0.0;
     int begin = 0;
     int end = 0;
 
@@ -139,8 +140,8 @@ float analitic_prioritet(std::vector<std::string> analized)
                 }
             }
         }
-
     }
+    answer = std::stoi(analized[0]);
 
     return answer;
 }
