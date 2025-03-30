@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cstring>
+#include <format>
 
 
 bool bracketsBalanced(const std::string& input)
@@ -32,20 +34,21 @@ bool bracketsBalanced(const std::string& input)
 
 std::vector<std::string> analitic_make(std::string main)
 {
-    const char chars[6] = {'*', '/', '+', '-', '(', ')'};
-    std::vector<std::string> result;
+    constexpr char allowedOperators[] = {'+', '-', '*', '/', '(', ')'};    std::vector<std::string> result = {};
     std::string number = "";
     for (int i = 0; i < main.size(); i++)
     {
         // Если символ не нашелся, то:
-        if (std::find(std::begin(chars), std::end(chars), main[i]) == std::end(chars))
+        if (std::find(std::begin(allowedOperators),
+            std::end(allowedOperators), main[i]) == std::end(allowedOperators))
         {
             number += main[i];
         }
         else
         {
-            if (number != ""){result.push_back(number);number = "";}
-            result.push_back(std::to_string(main[i]));
+            result.push_back(number);
+            number = "";
+            result.push_back(std::string(1, main[i]));
         }
     }
     return result;

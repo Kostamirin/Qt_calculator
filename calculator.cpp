@@ -1,6 +1,5 @@
 // Created by kleymuner2131 on 26.03.25.
 #include "calculator.h"
-#include "window.h"
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -16,7 +15,7 @@
 
 
 
-int main(int argc, char* argv[], std::string *error)
+int main(int argc, char* argv[])
 {
 
     QApplication app(argc, argv, '0');
