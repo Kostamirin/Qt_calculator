@@ -108,6 +108,48 @@ float analitic_prioritet(std::vector<std::string> analized)
                 }
             }
         }
+        else if (begin == end)
+        {
+            for (int i = 0; i < analized.size(); i++)
+            {
+                if (analized[i] == "*")
+                {
+                    float currentInt = std::stof(analized[i-1]) * std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (analized[i] == "/")
+                {
+                    if (analized[i+1] != "0")
+                    {
+                        float currentInt = std::stof(analized[i-1]) / std::stof(analized[i+1]);
+                        analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                        analized.erase(analized.begin() + i); // Удаляем оператор
+                        analized[i-1] = std::to_string(currentInt);
+                        i--; // Чтобы не пропустить следующий элемент
+                    }
+                }
+                else if (analized[i] == "+")
+                {
+                    float currentInt = std::stof(analized[i-1]) + std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (analized[i] == "-")
+                {
+                    float currentInt = std::stof(analized[i-1]) - std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+
+            }
+        }
     }
 
     return std::stof(analized[0]);
