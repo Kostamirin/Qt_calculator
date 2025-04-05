@@ -5,99 +5,25 @@ QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompiler.cmake.in \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCCompilerABI.c \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompiler.cmake.in \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCommonLanguageInclude.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCompilerIdDetection.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineCompilerSupport.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindBinUtils.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeGenericSystem.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeInitializeConfigs.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeLanguageInformation.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseImplicitIncludeInfo.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseImplicitLinkInfo.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeParseLibraryArchitecture.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystem.cmake.in \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeSystemSpecificInitialize.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeTestCompilerCommon.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckIncludeFile.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CheckLibraryExists.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Borland-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Bruce-C-DetermineCompiler.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Compaq-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Cray-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GHS-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C-DetermineCompiler.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-C.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-CXX.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU-FindBinUtils.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/GNU.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/HP-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IAR-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Intel-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/LCC-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/PGI-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/SCO-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/SDCC-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/SunPro-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/TI-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/XL-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/XLClang-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/zOS-C-DetermineCompiler.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/FeatureSummary.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindOpenGL.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake \
@@ -106,13 +32,10 @@ QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindThreads.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/FindVulkan.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/GNUInstallDirs.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckCompilerFlag.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckFlagCommonConfig.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Internal/FeatureTesting.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/MacroAddFileDependencies.cmake \
-	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-Determine-CXX.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-C.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU-CXX.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/Platform/Linux-GNU.cmake \

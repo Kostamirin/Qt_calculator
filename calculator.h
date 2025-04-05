@@ -53,7 +53,7 @@ std::vector<std::string> analitic_make(std::string main)
     }
     return result;
 }
-//! Эта функция должна расставлять приоритеры подсчета, действие за действием решая их
+//! Эта функция решает текст, расставляя приоритеты в тексте, удаляя решенные примеры
 float analitic_prioritet(std::vector<std::string> analized)
 {
     float answer = 0.0;
@@ -69,86 +69,49 @@ float analitic_prioritet(std::vector<std::string> analized)
         }
         if (begin != end) // Если есть скобки + начало с самых внутренних
         {
-            for (int i = begin; i < end; i++)
+            for (int i = begin + 1; i < end; i++)
             {
                 if (analized[i] == "*")
                 {
-                    float currentInt = std::stoi(analized[i-1]) * std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1); // Так как все автоматически подгоняется
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
+                    float currentInt = std::stof(analized[i-1]) * std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (analized[i] == "/")
                 {
                     if (analized[i+1] != "0")
                     {
-                        float currentInt = std::stoi(analized[i-1]) / std::stoi(analized[i]);
-                        analized.erase(analized.begin() + i-1); // Так как размер автоматически уменьшается
-                        analized.erase(analized.begin() + i-1);
-                        analized[i-1] = currentInt;
+                        float currentInt = std::stof(analized[i-1]) / std::stof(analized[i+1]);
+                        analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                        analized.erase(analized.begin() + i); // Удаляем оператор
+                        analized[i-1] = std::to_string(currentInt);
+                        i--; // Чтобы не пропустить следующий элемент
                     }
                 }
                 else if (analized[i] == "+")
                 {
-                    float currentInt = std::stoi(analized[i-1]) + std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1);
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
+                    float currentInt = std::stof(analized[i-1]) + std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (analized[i] == "-")
                 {
-                    float currentInt = std::stoi(analized[i-1]) - std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1);
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
-                }
-            }
-            analized.erase(analized.begin()+ begin);
-            analized.erase(analized.begin()+ begin);
-        }
-        else if (begin == end)// Если нет скобок - то проверка от начала -> до конца
-        {
-            for (int i = 0; i < analized.size(); i++)
-            {
-                if (analized[i] == "*")
-                {
-                    float currentInt = std::stoi(analized[i-1]) * std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1); // Так как все автоматически подгоняется
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
-                }
-                else if (analized[i] == "/")
-                {
-                    if (analized[i+1] != "0")
-                    {
-                        float currentInt = std::stoi(analized[i-1]) / std::stoi(analized[i]);
-                        analized.erase(analized.begin() + i-1); // Так как размер автоматически уменьшается
-                        analized.erase(analized.begin() + i-1);
-                        analized[i-1] = currentInt;
-                    }
-                }
-                else if (analized[i] == "+")
-                {
-                    float currentInt = std::stoi(analized[i-1]) + std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1);
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
-                }
-                else if (analized[i] == "-")
-                {
-                    float currentInt = std::stoi(analized[i-1]) - std::stoi(analized[i]);
-                    analized.erase(analized.begin() + i-1);
-                    analized.erase(analized.begin() + i-1);
-                    analized[i-1] = currentInt;
+                    float currentInt = std::stof(analized[i-1]) - std::stof(analized[i+1]);
+                    analized.erase(analized.begin() + i + 1); // Удаляем операнд
+                    analized.erase(analized.begin() + i); // Удаляем оператор
+                    analized[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
                 }
             }
         }
     }
-    answer = std::stoi(analized[0]);
 
-    return answer;
+    return std::stof(analized[0]);
 }
-
 float answer(std::string main)
 {
     //* После этой строки у меня есть массив со всеми символами и числами
