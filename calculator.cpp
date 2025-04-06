@@ -1,5 +1,6 @@
 // Created by kleymuner2131 on 26.03.25.
 #include "calculator.h"
+//#include "calculator2.cpp"
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -78,7 +79,6 @@ int main(int argc, char* argv[])
         display->setText(display->text() + "1");
         main += "1";
     });
-
     QObject::connect(two, &QPushButton::clicked, [&]()
     {
         display->setText(display->text() + "2");
@@ -124,6 +124,7 @@ int main(int argc, char* argv[])
         display->setText(display->text() + "0");
         main += "0";
     });
+
     QObject::connect(add, &QPushButton::clicked, [&]()
     {
         if (main.back() == '+' || main.back() == '-' || main.back() == '*' || main.back() == '/')
@@ -160,6 +161,23 @@ int main(int argc, char* argv[])
         display->setText(display->text() + "/");
         main += "/";
     });
+
+    QObject::connect(clear, &QPushButton::clicked, [&]()
+    {
+        display->setText("");
+        main = "";
+    });
+    QObject::connect(open, &QPushButton::clicked, [&]()
+    {
+        display->setText(display->text() + "(");
+        main += "(";
+    });
+    QObject::connect(close, &QPushButton::clicked, [&]()
+    {
+        display -> setText(display->text() + ")");
+        main += ")";
+    });
+
     QObject::connect(equal, &QPushButton::clicked, [&]()
     {
         if (main.back() == '+' || main.back() == '-' || main.back() == '*' || main.back() == '/')
@@ -178,7 +196,8 @@ int main(int argc, char* argv[])
         }
         else
         {
-            display->setText(display->text() + "=" + QString::number(answer(main)));
+            std::string result = std::to_string(answer(main));
+            display->setText(display->text() + "=" + QString::fromStdString(result));
         }
     });
 

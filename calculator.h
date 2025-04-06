@@ -59,7 +59,7 @@ float analitic_prioritet(std::vector<std::string> analized)
     float answer = 0.0;
     int begin = 0;
     int end = 0;
-
+    if (analized.size() == 0){return 0.0;}
     while (analized.size() != 1)
     {
         for (int i = 0; i < analized.size(); i++)

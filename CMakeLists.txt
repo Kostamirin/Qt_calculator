@@ -14,7 +14,7 @@ find_package(Qt6 COMPONENTS
   REQUIRED)
 
 add_executable(QT_GUI_project
-        #main.cpp
+        #calculator2.cpp
         #math_expression_evaluator.cpp
         #helper2.h
         calculator.cpp
