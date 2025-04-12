@@ -85,7 +85,25 @@ float answer_maker (std::vector<std::string> cooked)
         {
             for (int i = 0; i < cooked.size(); i++)
             {
-
+                if (cooked[i] == "*")
+                {
+                    float currentInt = std::stof(cooked[i-1]) * std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (cooked[i] == "/")
+                {
+                    if (cooked[i+1] != "0")
+                    {
+                        float currentInt = std::stof(cooked[i-1]) / std::stof(cooked[i+1]);
+                        cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                        cooked.erase(cooked.begin() + i); // Удаляем оператор
+                        cooked[i-1] = std::to_string(currentInt);
+                        i--; // Чтобы не пропустить следующий элемент
+                    }
+                }
             }
         }
 
