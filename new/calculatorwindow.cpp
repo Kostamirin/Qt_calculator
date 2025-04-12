@@ -83,28 +83,74 @@ CalculatorWindow::~CalculatorWindow()
 {
     // Destructor - Qt handles child widgets automatically
 }
-void secondButtonClicked()
+void CalculatorWindow::secondButtonClicked()
 {
-    QDebug(secondwindow) <<"Second button clicked";
-    SecondWindow *secondWindow = new SecondWindow(this);
-    secondWindow->show();
-    secondWindow.exec();
-    delete secondWindow;
+    SecondWindow *second_win = new SecondWindow(this);
+    second_win->show();
+    delete second_win;
 }
-void sumClicked();
-void subClicked();
-void mulClicked();
-void divClicked();
-void equalClicked();
-void clearClicked();
-void oneButtonClicked();
-void twoButtonClicked();
-void threeButtonClicked();
-void fourButtonClicked();
-void fiveButtonClicked();
-void sixButtonClicked();
-void sevenButtonClicked();
-void eightButtonClicked();
-void nineButtonClicked();
-void zeroButtonClicked();
+void CalculatorWindow::sumClicked()
+{
+
+}
+void CalculatorWindow::subClicked()
+{
+
+}
+void CalculatorWindow::mulClicked()
+{
+
+}
+void CalculatorWindow::divClicked()
+{
+
+}
+void CalculatorWindow::equalClicked()
+{
+
+}
+void CalculatorWindow::clearClicked()
+{
+
+}
+void CalculatorWindow::oneButtonClicked()
+{
+
+}
+void CalculatorWindow::twoButtonClicked()
+{
+
+}
+void CalculatorWindow::threeButtonClicked()
+{
+
+}
+void CalculatorWindow::fourButtonClicked()
+{
+
+}
+void CalculatorWindow::fiveButtonClicked()
+{
+
+}
+void CalculatorWindow::sixButtonClicked()
+{
+
+}
+void CalculatorWindow::sevenButtonClicked()
+{
+
+}
+void CalculatorWindow::eightButtonClicked()
+{
+
+}
+void CalculatorWindow::nineButtonClicked()
+{
+
+}
+void CalculatorWindow::zeroButtonClicked()
+{
+
+}
 
