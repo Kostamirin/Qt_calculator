@@ -61,6 +61,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     QPushButton *open = new QPushButton("("); //todo: Создать функционал для этих скобок
     connect(open, &QPushButton::clicked, this, &CalculatorWindow::openButtonClicked);
     QPushButton *close = new QPushButton(")");
+    connect(close, &QPushButton::clicked, this, &CalculatorWindow::closeButtonClicked);
 
 
     // --- Placeholder for buttons ---
