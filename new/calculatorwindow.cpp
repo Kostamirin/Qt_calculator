@@ -1,11 +1,13 @@
 #include "calculatorwindow.h"
 #include "head.cpp"
-#include <string>
 #include "secondwindow.h" // Include header for the second window
+
+#include <iostream>
+#include <string>
 #include <QGridLayout>
 #include <QPushButton>
 #include <QDebug>
-
+#include <QApplication>
 
 std::string main_string = "";
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
@@ -17,8 +19,8 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     QGridLayout *layout = new QGridLayout(centralWidget);
 
     // Display
-    display = new QLineEdit("0");
-    display->setReadOnly(false);
+    display = new QLineEdit();
+    display->setReadOnly(true);
     display->setAlignment(Qt::AlignRight);
     layout->addWidget(display, 0, 0, 1, 5); // Span across 4 columns
 
@@ -134,7 +136,7 @@ void CalculatorWindow::divClicked()
 void CalculatorWindow::clearClicked() //! Functional button E
 { //todo: Добавить некий таймер, за который все еще возможно ничего не делать,
   //todo:чтобы не произошло очистки -- добавить ожидание второго нажатия
-    display->setText("0");
+    display->setText("");
 }
 void CalculatorWindow::oneButtonClicked() //! Numbers button S
 {
@@ -189,6 +191,17 @@ void CalculatorWindow::zeroButtonClicked() //! Numbers button E
 
 void CalculatorWindow::equalClicked() //! Equal button
 {
-
+    double answer = 0.0;
+    try
+    {
+        Calculator Calculator;
+        answer = Calculator.evaluateExpression(main_string);
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr <<"Error:" <<e.what();
+        QApplication::quit();
+    }
+    display->setText(QString::number(answer));
 }
 
