@@ -139,6 +139,7 @@ void CalculatorWindow::clearClicked() //! Functional button E
 { //todo: Добавить некий таймер, за который все еще возможно ничего не делать,
   //todo:чтобы не произошло очистки -- добавить ожидание второго нажатия
     display->setText("");
+    main_string = "";
 }
 void CalculatorWindow::oneButtonClicked() //! Numbers button S
 {
