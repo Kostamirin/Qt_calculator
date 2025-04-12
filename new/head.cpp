@@ -108,6 +108,10 @@ float answer_maker (std::vector<std::string> cooked)
         }
 
     }
+
+    float answer = std::stof(cooked[0]);
+
+    return answer;
 }
 
 double answer_function(std::string main)
