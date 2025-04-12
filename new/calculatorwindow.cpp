@@ -91,6 +91,7 @@ void CalculatorWindow::secondButtonClicked()
 {
     SecondWindow *second_win = new SecondWindow(this);
     second_win->show();
+    second_win->exec();
     delete second_win;
 }
 void CalculatorWindow::sumClicked() //! Functional button S
