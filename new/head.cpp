@@ -77,6 +77,25 @@ float answer_maker (std::vector<std::string> cooked)
                     }
                 }
             }
+            for (int i = begin+1; i < end; i++)
+            {
+                if (cooked[i] == "+")
+                {
+                    float currentInt = std::stof(cooked[i-1]) + std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::string(1,currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (cooked[i] == "-")
+                {
+                    float currentInt = std::stof(cooked[i-1]) - std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::string(1,currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+            }
             cooked.erase(cooked.begin()+begin+1);
             cooked.erase(cooked.begin()+begin);
             begin = 0; end = 0;
