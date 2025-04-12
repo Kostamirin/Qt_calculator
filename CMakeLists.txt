@@ -14,12 +14,11 @@ find_package(Qt6 COMPONENTS
   REQUIRED)
 
 add_executable(QT_GUI_project
-        #calculator2.cpp
-        #math_expression_evaluator.cpp
-        #helper2.h
-        calculator.cpp
-        calculator.h
+        new/calculatorwindow.cpp
+        new/main.cpp
+        new/secondwindow.cpp
 )
+
 target_link_libraries(QT_GUI_project
   Qt::Core
   Qt::Gui

@@ -1,10 +1,13 @@
 // Created by kleymuner2131 on 26.03.25.
+int main_choose(int argc, char* argv[]);
 #include "calculator.h"
 //#include "calculator2.cpp"
+//#include "progression_main.cpp"
 #include <iostream>
 #include <string>
 #include <cmath>
 
+#include <QLabel>
 #include <QApplication>
 #include <QPushButton>
 #include <QGridLayout>
@@ -16,10 +19,9 @@
 
 
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]){
 
-    QApplication app(argc, argv, '0');
+    QApplication app(argc, argv);
     std::string main;
     QWidget window;
     window.setWindowTitle("Calculator");
@@ -201,7 +203,50 @@ int main(int argc, char* argv[])
         }
     });
 
+    QObject::connect(second, &QPushButton::clicked, [&]()
+    {
+        main_choose(0, nullptr);
+    });
 
     window.show();
+    return app.exec();
+}
+
+int main_choose(int argc, char* argv[])
+{
+    QApplication app(argc, argv);
+
+    QWidget window;
+    window.setWindowTitle("Progression Calculator");
+    window.resize(300, 100);
+
+    QVBoxLayout layout(&window);
+
+    QLabel label("Choose one of the options below:");
+    layout.addWidget(&label);
+
+    QHBoxLayout buttons;
+    layout.addLayout(&buttons);
+
+    QPushButton arithmetic("Arithmetic Progression");
+    QPushButton geometric("Geometric Progression");
+    QPushButton manual("Manual");
+    QPushButton exit("Exit to Calculator");
+
+    buttons.addWidget(&arithmetic);
+    buttons.addWidget(&geometric);
+    buttons.addWidget(&manual);
+    buttons.addWidget(&exit);
+
+    QObject::connect(&arithmetic, &QPushButton::clicked, [](){});
+
+    QObject::connect(&geometric, &QPushButton::clicked, [](){});
+
+    QObject::connect(&manual, &QPushButton::clicked, [](){});
+
+    QObject::connect(&exit, &QPushButton::clicked, [](){});
+
+    window.show();
+
     return app.exec();
 }

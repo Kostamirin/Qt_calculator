@@ -176,9 +176,15 @@
 	"HEADERS" : 
 	[
 		[
-			"/home/kleymuner2131/CLionProjects/Qt_calculator/calculator.h",
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.h",
 			"MU",
-			"EWIEGA46WW/moc_calculator.cpp",
+			"YW4MI2SATE/moc_calculatorwindow.cpp",
+			null
+		],
+		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.h",
+			"MU",
+			"YW4MI2SATE/moc_secondwindow.cpp",
 			null
 		]
 	],
@@ -240,7 +246,17 @@
 	"SOURCES" : 
 	[
 		[
-			"/home/kleymuner2131/CLionProjects/Qt_calculator/calculator.cpp",
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/new/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.cpp",
 			"MU",
 			null
 		]
