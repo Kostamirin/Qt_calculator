@@ -1,72 +1,101 @@
 // Created by kleymuner2131 on 12.04.25.
 #include <string>
 #include <vector>
-#include <sstream>
 
-class Calculator
+bool is_this_balanced(std::string main)
 {
-public:
-    float evaluateExpression(const std::string& expression);
-
-private:
-    std::vector<std::string> tokenize(const std::string& expression);
-    float parseTokens(std::vector<std::string>& tokens);
-    float applyOperator(float left, float right, const std::string& op);
-};
-
-std::vector<std::string> Calculator::tokenize(const std::string& expression) {
-    std::vector<std::string> tokens;
-    std::string token;
-    std::stringstream ss(expression);
-
-    // Split the expression into tokens
-    while (ss >> token) {
-        tokens.push_back(token);
+    int balance;
+    for (char ch : main)
+    {
+        if (ch == '('){balance ++;}
+        else if (ch == ')'){balance --;}
     }
-    return tokens;
+    if (balance == 0){return true;}
+    else{return false;}
 }
 
-float Calculator::applyOperator(float left, float right, const std::string& op) {
-    // Apply the operator to the left and right operands
-    if (op == "+") return left + right;
-    if (op == "-") return left - right;
-    if (op == "*") return left * right;
-    if (op == "/" && right != 0) return left / right;
-    return 0.0;
-}
-
-float Calculator::parseTokens(std::vector<std::string>& tokens) {
-    // Evaluate the expression by applying operators in the correct order
-    while (tokens.size() > 1) {
-        for (auto it = tokens.begin(); it != tokens.end(); ++it) {
-            // Check for multiplication and division operators
-            if (*it == "*" || *it == "/") {
-                float left = std::stof(*(it - 1));
-                float right = std::stof(*(it + 1));
-                float result = applyOperator(left, right, *it);
-                it = tokens.erase(it - 1, it + 2);
-                tokens.insert(it, std::to_string(result));
-                break;
+std::vector<std::string> chars_make(std::string main)
+{
+    std::vector<std::string> cooked = {};
+    for (int i = 0; i < main.size(); i++)
+    {
+        if (main[i] >= '0' && main[i] <='9')
+        {
+            std::string number = "";
+            while (main[i] >= '0' && main[i] <='9')
+            {
+                number += main[i];
+                i++;
             }
+            cooked.push_back(number);
+            i--;
         }
-        for (auto it = tokens.begin(); it != tokens.end(); ++it) {
-            // Check for addition and subtraction operators
-            if (*it == "+" || *it == "-") {
-                float left = std::stof(*(it - 1));
-                float right = std::stof(*(it + 1));
-                float result = applyOperator(left, right, *it);
-                it = tokens.erase(it - 1, it + 2);
-                tokens.insert(it, std::to_string(result));
-                break;
-            }
+        else
+        {
+            //! todo: Важная состовляющая
+            cooked.push_back(std::string(1, main[i])); //*cooked.push_back(std::string(main[i]));
         }
     }
-    // Return the final result
-    return std::stof(tokens.front());
+    return cooked;
 }
 
-float Calculator::evaluateExpression(const std::string& expression) {
-    // Tokenize the expression and evaluate it
-    std::vector<std::string> tokens = tokenize(expression);
-    return parseTokens(tokens);
+float answer_maker (std::vector<std::string> cooked)
+{
+    float answer;
+    int begin = 0; int end = 0;
+    while (cooked.size() != 1)
+    {
+        if (begin == 0){
+            for (int i = 0; i < cooked.size(); i++)
+            {
+                if (cooked[i] == "("){begin = i;}
+                else if (cooked[i] == ")"){end = i;}
+            }
+        }
+        if (begin != end) // Если есть скобки + начало с самых внутренних
+        {
+            // todo: Учесть что возможно более и менее приоритетное действие внутри скобок
+            for (int i = begin + 1; i < end; i++)
+            {
+                if (cooked[i] == "*")
+                {
+                    float currentInt = std::stof(cooked[i-1]) * std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (cooked[i] == "/")
+                {
+                    if (cooked[i+1] != "0")
+                    {
+                        float currentInt = std::stof(cooked[i-1]) / std::stof(cooked[i+1]);
+                        cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                        cooked.erase(cooked.begin() + i); // Удаляем оператор
+                        cooked[i-1] = std::to_string(currentInt);
+                        i--; // Чтобы не пропустить следующий элемент
+                    }
+                }
+            }
+            cooked.erase(cooked.begin()+begin+1);
+            cooked.erase(cooked.begin()+begin);
+            begin = 0; end = 0;
+        }
+        else
+        {
+            for (int i = 0; i < cooked.size(); i++)
+            {
+
+            }
+        }
+
+    }
+}
+
+double answer_function(std::string main)
+{
+    std::vector<std::string> cooked = chars_make(main);
+    float answer = answer_maker(cooked);
+
+    return 0;
 }

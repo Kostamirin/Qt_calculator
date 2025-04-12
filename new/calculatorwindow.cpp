@@ -191,17 +191,17 @@ void CalculatorWindow::zeroButtonClicked() //! Numbers button E
 
 void CalculatorWindow::equalClicked() //! Equal button
 {
-    double answer = 0.0;
-    try
+    if (is_this_balanced(main_string) == false)
     {
-        Calculator Calculator;
-        answer = Calculator.evaluateExpression(main_string);
+        display->setText("Error: Not balanced");
+        // Return from function because of error
+        // This is because the input string is not balanced
+        // i.e. the number of opening and closing brackets do not match
+        // This would cause an error in the calculation of the answer
+        return;
     }
-    catch (const std::exception& e)
-    {
-        std::cerr <<"Error:" <<e.what();
-        QApplication::quit();
-    }
+    double answer = answer_function(main_string);
+
     display->setText(QString::number(answer));
 }
 
