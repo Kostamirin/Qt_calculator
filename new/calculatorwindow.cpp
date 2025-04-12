@@ -207,7 +207,7 @@ void CalculatorWindow::equalClicked() //! Equal button
 {
     if (is_this_balanced(main_string) == false)
     {
-        display->setText("Error: Not balanced");
+        QMessageBox::information(nullptr, "Warning!", "The brackets are unbalanced in the provided example, which will lead the program to an error.");
         // Return from function because of error
         // This is because the input string is not balanced
         // i.e. the number of opening and closing brackets do not match
