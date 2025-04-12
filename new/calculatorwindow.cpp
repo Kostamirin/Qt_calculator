@@ -1,13 +1,15 @@
 #include "calculatorwindow.h"
+#include "head.cpp"
 #include <string>
 #include "secondwindow.h" // Include header for the second window
 #include <QGridLayout>
 #include <QPushButton>
 #include <QDebug>
 
+
+std::string main_string = "";
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
 {
-    std::string main;
     // Basic window setup
     setWindowTitle("Calculator");
     QWidget *centralWidget = new QWidget(this);
@@ -93,63 +95,94 @@ void CalculatorWindow::secondButtonClicked()
 }
 void CalculatorWindow::sumClicked() //! Functional button S
 {
-    display->setText(display->text()+="+");
+    if (main_string[main_string.size()-1] != '+')
+    {
+        main_string += "+";
+        display->setText(display->text()+="+");
+    }
+    else{NULL;}
 }
 void CalculatorWindow::subClicked()
 {
-    display->setText(display->text()+="-");
+    if (main_string[main_string.size()-1] != '-')
+    {
+        main_string += "-";
+        display->setText(display->text()+="-");
+    }
+    else{NULL;}
 }
 void CalculatorWindow::mulClicked()
 {
-    display->setText(display->text()+= "*");
+    if (main_string[main_string.size()-1] != '*')
+    {
+        main_string += "*";
+        display->setText(display->text()+="*");
+    }
+    else{NULL;}
 }
 void CalculatorWindow::divClicked()
 {
-    display->setText(display->text()+= "/");
+    if (main_string[main_string.size()-1] != '/')
+    {
+        main_string += "/";
+        display->setText(display->text()+="/");
+    }
+    else{NULL;}
 }
 
 void CalculatorWindow::clearClicked() //! Functional button E
-{
+{ //todo: Добавить некий таймер, за который все еще возможно ничего не делать,
+  //todo:чтобы не произошло очистки -- добавить ожидание второго нажатия
     display->setText("0");
 }
 void CalculatorWindow::oneButtonClicked() //! Numbers button S
 {
+    main_string += "1";
     display->setText(display->text()+= "1");
 }
 void CalculatorWindow::twoButtonClicked()
 {
+    main_string += "2";
     display->setText(display->text()+= "2");
 }
 void CalculatorWindow::threeButtonClicked()
 {
+    main_string += "3";
     display->setText(display->text()+= "3");
 }
 void CalculatorWindow::fourButtonClicked()
 {
+    main_string += "4";
     display->setText(display->text()+= "4");
 }
 void CalculatorWindow::fiveButtonClicked()
 {
+    main_string += "5";
     display->setText(display->text()+= "5");
 }
 void CalculatorWindow::sixButtonClicked()
 {
+    main_string += "6";
     display->setText(display->text()+= "6");
 }
 void CalculatorWindow::sevenButtonClicked()
 {
+    main_string += "7";
     display->setText(display->text()+= "7");
 }
 void CalculatorWindow::eightButtonClicked()
 {
+    main_string += "8";
     display->setText(display->text()+= "8");
 }
 void CalculatorWindow::nineButtonClicked()
 {
+    main_string += "9";
     display->setText(display->text()+= "9");
 }
 void CalculatorWindow::zeroButtonClicked() //! Numbers button E
 {
+    main_string += "0";
     display->setText(display->text()+= "0");
 }
 
