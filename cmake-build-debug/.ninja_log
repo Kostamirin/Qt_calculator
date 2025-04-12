@@ -1,0 +1,21 @@
+# ninja log v6
+187	1981	1744449731422559396	CMakeFiles/QT_GUI_project.dir/new/secondwindow.cpp.o	561b7e7d62e16da7
+186	2028	1744449731421559409	CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o	929ea4b6bebff35d
+186	2026	1744449731421559409	CMakeFiles/QT_GUI_project.dir/new/main.cpp.o	e167c24262718d94
+9	2239	1744440789269447774	CMakeFiles/QT_GUI_project.dir/calculator.cpp.o	6dc88d6ffc33ea9b
+0	186	1744449731418559445	QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+9	2014	1743949471137597497	CMakeFiles/QT_GUI_project.dir/calculator2.cpp.o	b8dd585462a3f149
+0	186	1744449731418559445	QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+0	186	1744449731418559445	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+1	126	1744450508537985506	build.ninja	67daa87c0609ae18
+186	2051	1744449731421559409	CMakeFiles/QT_GUI_project.dir/QT_GUI_project_autogen/mocs_compilation.cpp.o	f4db774370bece99
+9	2094	1744440789269447774	CMakeFiles/QT_GUI_project.dir/progression_main.cpp.o	f0935ed6588ede98
+0	186	1744449731418559445	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+2051	2328	1744449733286536754	QT_GUI_project	370b7cbfd54acdf0
+6	187	1744451097158629803	QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+6	187	1744451097158629803	QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+6	187	1744451097158629803	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+6	187	1744451097158629803	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+187	2034	1744451097162629628	CMakeFiles/QT_GUI_project.dir/QT_GUI_project_autogen/mocs_compilation.cpp.o	f4db774370bece99
+188	2043	1744451097163629585	CMakeFiles/QT_GUI_project.dir/new/main.cpp.o	e167c24262718d94
+187	2051	1744451097162629628	CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o	929ea4b6bebff35d
