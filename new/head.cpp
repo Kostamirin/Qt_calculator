@@ -1,10 +1,11 @@
 // Created by kleymuner2131 on 12.04.25.
 #include <string>
 #include <vector>
+#include <QMessageBox>
 
 bool is_this_balanced(std::string main)
 {
-    int balance;
+    int balance = 0;
     for (char ch : main)
     {
         if (ch == '('){balance ++;}
@@ -41,7 +42,6 @@ std::vector<std::string> chars_make(std::string main)
 
 float answer_maker (std::vector<std::string> cooked)
 {
-    float answer;
     int begin = 0; int end = 0;
     while (cooked.size() != 1)
     {
@@ -84,7 +84,7 @@ float answer_maker (std::vector<std::string> cooked)
                     float currentInt = std::stof(cooked[i-1]) + std::stof(cooked[i+1]);
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::string(1,currentInt);
+                    cooked[i-1] = std::to_string(currentInt);
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "-")
@@ -92,11 +92,11 @@ float answer_maker (std::vector<std::string> cooked)
                     float currentInt = std::stof(cooked[i-1]) - std::stof(cooked[i+1]);
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::string(1,currentInt);
+                    cooked[i-1] = std::to_string(currentInt);
                     i--; // Чтобы не пропустить следующий элемент
                 }
             }
-            cooked.erase(cooked.begin()+begin+1);
+            cooked.erase(cooked.begin()+begin+2);
             cooked.erase(cooked.begin()+begin);
             begin = 0; end = 0;
         }
@@ -122,6 +122,30 @@ float answer_maker (std::vector<std::string> cooked)
                         cooked[i-1] = std::to_string(currentInt);
                         i--; // Чтобы не пропустить следующий элемент
                     }
+                    else
+                    {
+                        QMessageBox::warning(nullptr, "Error", "Деление на 0");
+                        return NULL;
+                    }
+                }
+            }
+            for (int i= 0; i < cooked.size(); i++)
+            {
+                if (cooked[i] == "+")
+                {
+                    float currentInt = std::stof(cooked[i-1]) + std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
+                }
+                else if (cooked[i] == "-")
+                {
+                    float currentInt = std::stof(cooked[i-1]) - std::stof(cooked[i+1]);
+                    cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
+                    cooked.erase(cooked.begin() + i); // Удаляем оператор
+                    cooked[i-1] = std::to_string(currentInt);
+                    i--; // Чтобы не пропустить следующий элемент
                 }
             }
         }
@@ -138,5 +162,5 @@ double answer_function(std::string main)
     std::vector<std::string> cooked = chars_make(main);
     float answer = answer_maker(cooked);
 
-    return 0;
+    return answer;
 }

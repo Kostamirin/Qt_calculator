@@ -98,6 +98,17 @@ void CalculatorWindow::secondButtonClicked()
     second_win->exec();
     delete second_win;
 }
+void CalculatorWindow::openButtonClicked()
+{
+    main_string += "(";
+    display->setText(display->text()+"(");
+}
+void CalculatorWindow::closeButtonClicked()
+{
+    main_string += ")";
+    display->setText(display->text()+")");
+
+}
 void CalculatorWindow::sumClicked() //! Functional button S
 {
     if (main_string[main_string.size()-1] != '+')
@@ -204,7 +215,15 @@ void CalculatorWindow::equalClicked() //! Equal button
         return;
     }
     double answer = answer_function(main_string);
+    if (answer == NULL)
+    {
+        display->setText("");
+        main_string = "";
+    }
+    else
+    {
+        display->setText(QString::number(answer));
+    }
 
-    display->setText(QString::number(answer));
 }
 

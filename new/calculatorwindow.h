@@ -35,7 +35,8 @@ private slots:
     void eightButtonClicked();
     void nineButtonClicked();
     void zeroButtonClicked();
-
+    void openButtonClicked();
+    void closeButtonClicked();
 
 private:
     QLineEdit *display;
