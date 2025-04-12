@@ -1,4 +1,5 @@
 #include "calculatorwindow.h"
+#include <string>
 #include "secondwindow.h" // Include header for the second window
 #include <QGridLayout>
 #include <QPushButton>
@@ -6,6 +7,7 @@
 
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
 {
+    std::string main;
     // Basic window setup
     setWindowTitle("Calculator");
     QWidget *centralWidget = new QWidget(this);
@@ -91,31 +93,28 @@ void CalculatorWindow::secondButtonClicked()
 }
 void CalculatorWindow::sumClicked()
 {
-
+    display->setText(display->text()+="+");
 }
 void CalculatorWindow::subClicked()
 {
-
+    display->setText(display->text()+="-");
 }
 void CalculatorWindow::mulClicked()
 {
-
+    display->setText(display->text()+= "*");
 }
 void CalculatorWindow::divClicked()
 {
-
+    display->setText(display->text()+= "/");
 }
-void CalculatorWindow::equalClicked()
-{
 
-}
 void CalculatorWindow::clearClicked()
 {
-
+    display->setText("0");
 }
 void CalculatorWindow::oneButtonClicked()
 {
-
+    display->setText(display->text()+= "1");
 }
 void CalculatorWindow::twoButtonClicked()
 {
@@ -150,6 +149,11 @@ void CalculatorWindow::nineButtonClicked()
 
 }
 void CalculatorWindow::zeroButtonClicked()
+{
+
+}
+
+void CalculatorWindow::equalClicked()
 {
 
 }
