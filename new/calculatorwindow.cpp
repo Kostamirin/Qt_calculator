@@ -54,7 +54,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     connect(clear, &QPushButton::clicked, this, &CalculatorWindow::clearClicked);
     QPushButton *second = new QPushButton("2nd");
     connect(second, &QPushButton::clicked, this, &CalculatorWindow::secondButtonClicked);
-    QPushButton *open = new QPushButton("(");
+    QPushButton *open = new QPushButton("("); //todo: Создать функционал для этих скобок
     QPushButton *close = new QPushButton(")");
 
 
@@ -73,8 +73,8 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(seven, 3, 0);
     layout->addWidget(eight, 3, 1);
     layout->addWidget(nine, 3, 2);
-    layout->addWidget(open, 3, 3);
-    layout->addWidget(close, 3, 4);
+    layout->addWidget(open, 3, 3); //!     (
+    layout->addWidget(close, 3, 4); //!    )
     layout->addWidget(second, 4, 0);
     layout->addWidget(equal, 4, 3, 1,2);
     layout->addWidget(zero, 4, 1);
@@ -91,7 +91,7 @@ void CalculatorWindow::secondButtonClicked()
     second_win->show();
     delete second_win;
 }
-void CalculatorWindow::sumClicked()
+void CalculatorWindow::sumClicked() //! Functional button S
 {
     display->setText(display->text()+="+");
 }
@@ -108,52 +108,52 @@ void CalculatorWindow::divClicked()
     display->setText(display->text()+= "/");
 }
 
-void CalculatorWindow::clearClicked()
+void CalculatorWindow::clearClicked() //! Functional button E
 {
     display->setText("0");
 }
-void CalculatorWindow::oneButtonClicked()
+void CalculatorWindow::oneButtonClicked() //! Numbers button S
 {
     display->setText(display->text()+= "1");
 }
 void CalculatorWindow::twoButtonClicked()
 {
-
+    display->setText(display->text()+= "2");
 }
 void CalculatorWindow::threeButtonClicked()
 {
-
+    display->setText(display->text()+= "3");
 }
 void CalculatorWindow::fourButtonClicked()
 {
-
+    display->setText(display->text()+= "4");
 }
 void CalculatorWindow::fiveButtonClicked()
 {
-
+    display->setText(display->text()+= "5");
 }
 void CalculatorWindow::sixButtonClicked()
 {
-
+    display->setText(display->text()+= "6");
 }
 void CalculatorWindow::sevenButtonClicked()
 {
-
+    display->setText(display->text()+= "7");
 }
 void CalculatorWindow::eightButtonClicked()
 {
-
+    display->setText(display->text()+= "8");
 }
 void CalculatorWindow::nineButtonClicked()
 {
-
+    display->setText(display->text()+= "9");
 }
-void CalculatorWindow::zeroButtonClicked()
+void CalculatorWindow::zeroButtonClicked() //! Numbers button E
 {
-
+    display->setText(display->text()+= "0");
 }
 
-void CalculatorWindow::equalClicked()
+void CalculatorWindow::equalClicked() //! Equal button
 {
 
 }
