@@ -85,7 +85,7 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "/")
@@ -96,7 +96,7 @@ double answer_maker (std::vector<std::string> cooked)
                         cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                         cooked.erase(cooked.begin() + i); // Удаляем оператор
                         // Контролируем точность при преобразовании в строку
-                        cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                        cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                         i--; // Чтобы не пропустить следующий элемент
                     }
                 }
@@ -109,7 +109,7 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "-")
@@ -118,7 +118,7 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
             }
@@ -136,7 +136,7 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "/")
@@ -147,7 +147,7 @@ double answer_maker (std::vector<std::string> cooked)
                         cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                         cooked.erase(cooked.begin() + i); // Удаляем оператор
                         // Контролируем точность при преобразовании в строку
-                        cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                        cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                         i--; // Чтобы не пропустить следующий элемент
                     }
                     else
@@ -165,7 +165,10 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    // cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString(); // fixed
+                    // cooked[i-1] = QString::number(currentInt, 'e', 10).toStdString(); // scientific
+                    // cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString(); // general
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "-")
@@ -174,7 +177,7 @@ double answer_maker (std::vector<std::string> cooked)
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
                     // Контролируем точность при преобразовании в строку
-                    cooked[i-1] = QString::number(currentInt, 'g', 10).toStdString();
+                    cooked[i-1] = QString::number(currentInt, 'f', 10).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
             }
