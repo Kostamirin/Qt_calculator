@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QT_GUI_project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_GUI_project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_GUI_project-Debug-33c1cb4557eab2dc6378.json",
+					"name" : "QT_GUI_project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_GUI_project_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_GUI_project_autogen-Debug-638dca6022c6bd4b2477.json",
+					"name" : "QT_GUI_project_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_GUI_project_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_GUI_project_autogen_timestamp_deps-Debug-8492ec0eed6c99debc5a.json",
+					"name" : "QT_GUI_project_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug",
+		"source" : "/home/kleymuner2131/CLionProjects/Qt_calculator"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

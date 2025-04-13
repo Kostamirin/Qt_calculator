@@ -9,6 +9,7 @@
 #include <QDebug>
 #include <QApplication>
 #include <QMessageBox>
+#include <QFile>
 
 std::string main_string = "";
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
@@ -96,71 +97,13 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(equal, 4, 3);
     layout->addWidget(clear, 4, 4);
 
-    // Define button styles with comments for easy customization
-    QString buttonStyle = R"(
-        /* Common style for all buttons */
-        QPushButton {
-            min-width: 50px;
-            min-height: 50px;
-            border: 1px solid #808080;
-            border-radius: 4px;
-            margin: 2px;
-        }
-
-        /* Style for number buttons */
-        QPushButton[text="0"],
-        QPushButton[text="1"],
-        QPushButton[text="2"],
-        QPushButton[text="3"],
-        QPushButton[text="4"],
-        QPushButton[text="5"],
-        QPushButton[text="6"],
-        QPushButton[text="7"],
-        QPushButton[text="8"],
-        QPushButton[text="9"],
-        QPushButton[text="."] {
-            background-color: #404040;
-            color: white;
-        }
-
-        /* Style for operation buttons */
-        QPushButton[text="+"],
-        QPushButton[text="-"],
-        QPushButton[text="*"],
-        QPushButton[text="/"],
-        QPushButton[text="="],
-        QPushButton[text="("],
-        QPushButton[text=')']
-        {
-            background-color: #ed903d;
-            color: white;
-        }
-
-        /* Special style for Clear button */
-        QPushButton[text="Cl"] {
-            background-color: #FF4444;
-            color: white;
-        }
-
-        /* Special style for 2nd button - easily customizable */
-        QPushButton[text="2nd"] {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        /* Hover effect for all buttons */
-        QPushButton:hover {
-            background-color: darker(@background-color, 110%);
-        }
-
-        /* Pressed effect for all buttons */
-        QPushButton:pressed {
-            background-color: darker(@background-color, 120%);
-            border-style: inset;
-        }
-    )";
-
-    centralWidget->setStyleSheet(buttonStyle);
+    // Load styles from external file
+    QFile styleFile(":/styles/calculator.qss");
+    if (styleFile.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(styleFile.readAll());
+        centralWidget->setStyleSheet(styleSheet);
+        styleFile.close();
+    }
 }
 
 CalculatorWindow::~CalculatorWindow()

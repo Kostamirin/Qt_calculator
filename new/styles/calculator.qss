@@ -1,0 +1,118 @@
+/* Common style for all buttons */
+QPushButton {
+    min-width: 50px;
+    min-height: 50px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    margin: 2px;
+}
+
+/* Style for number buttons */
+QPushButton[text="0"],
+QPushButton[text="1"],
+QPushButton[text="2"],
+QPushButton[text="3"],
+QPushButton[text="4"],
+QPushButton[text="5"],
+QPushButton[text="6"],
+QPushButton[text="7"],
+QPushButton[text="8"],
+QPushButton[text="9"],
+QPushButton[text="."] {
+    background-color: #404040;
+    color: white;
+}
+
+/* Number buttons hover/pressed states */
+QPushButton[text="0"]:hover,
+QPushButton[text="1"]:hover,
+QPushButton[text="2"]:hover,
+QPushButton[text="3"]:hover,
+QPushButton[text="4"]:hover,
+QPushButton[text="5"]:hover,
+QPushButton[text="6"]:hover,
+QPushButton[text="7"]:hover,
+QPushButton[text="8"]:hover,
+QPushButton[text="9"]:hover,
+QPushButton[text="."]:hover {
+    background-color: #303030;
+}
+
+QPushButton[text="0"]:pressed,
+QPushButton[text="1"]:pressed,
+QPushButton[text="2"]:pressed,
+QPushButton[text="3"]:pressed,
+QPushButton[text="4"]:pressed,
+QPushButton[text="5"]:pressed,
+QPushButton[text="6"]:pressed,
+QPushButton[text="7"]:pressed,
+QPushButton[text="8"]:pressed,
+QPushButton[text="9"]:pressed,
+QPushButton[text="."]:pressed {
+    background-color: #202020;
+    border-style: inset;
+}
+
+/* Style for operation buttons */
+QPushButton[text="+"],
+QPushButton[text="-"],
+QPushButton[text="*"],
+QPushButton[text="/"],
+QPushButton[text="="],
+QPushButton[text="("],
+QPushButton[text=")"] {
+    background-color: #ed903d;
+    color: white;
+}
+
+/* Operation buttons hover/pressed states */
+QPushButton[text="+"]:hover,
+QPushButton[text="-"]:hover,
+QPushButton[text="*"]:hover,
+QPushButton[text="/"]:hover,
+QPushButton[text="="]:hover,
+QPushButton[text="("]:hover,
+QPushButton[text=")"]:hover {
+    background-color: #E59400;
+}
+
+QPushButton[text="+"]:pressed,
+QPushButton[text="-"]:pressed,
+QPushButton[text="*"]:pressed,
+QPushButton[text="/"]:pressed,
+QPushButton[text="="]:pressed,
+QPushButton[text="("]:pressed,
+QPushButton[text=")"]:pressed {
+    background-color: #CC8400;
+    border-style: inset;
+}
+
+/* Special style for Clear button */
+QPushButton[text="Cl"] {
+    background-color: #FF4444;
+    color: white;
+}
+
+QPushButton[text="Cl"]:hover {
+    background-color: #FF2222;
+}
+
+QPushButton[text="Cl"]:pressed {
+    background-color: #FF0000;
+    border-style: inset;
+}
+
+/* Special style for 2nd button - easily customizable */
+QPushButton[text="2nd"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+QPushButton[text="2nd"]:hover {
+    background-color: #45A049;
+}
+
+QPushButton[text="2nd"]:pressed {
+    background-color: #3D8B40;
+    border-style: inset;
+}
