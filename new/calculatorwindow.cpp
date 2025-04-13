@@ -228,3 +228,12 @@ void CalculatorWindow::equalClicked() //! Equal button
 
 }
 
+void CalculatorWindow::dotButtonClicked()
+{
+    if (main_string[main_string.size()-1] != '.')
+    {
+        main_string += ".";
+        display->setText(display->text()+=".");
+    }
+    else{NULL;}
+}
