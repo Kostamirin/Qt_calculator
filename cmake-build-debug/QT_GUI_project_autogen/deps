@@ -1,15 +1,16 @@
 QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/CMakeLists.txt \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeCXXCompiler.cmake \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/moc_predefs.h \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.h \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/head.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/main.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.h \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/head.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/head.h \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/main.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.h \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \

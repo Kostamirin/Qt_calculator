@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RCC>
     <qresource prefix="/">
-        <file>styles/calculator.qss</file>
+        <file>calculator.qss</file>
     </qresource>
 </RCC>

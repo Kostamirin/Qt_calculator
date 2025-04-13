@@ -1,6 +1,6 @@
 #include "calculatorwindow.h"
 #include "head.h"
-#include "secondwindow.h" // Include header for the second window
+#include "secondwindow.h"
 
 #include <iostream>
 #include <string>
