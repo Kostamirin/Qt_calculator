@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <QMessageBox>
+#include <QString>
 
 bool is_this_balanced(std::string main)
 {
@@ -51,7 +52,7 @@ std::vector<std::string> chars_make(std::string main)
                 i++;
             }
             cooked.push_back(number);
-            i--; //Чтобы не пропустить следущий
+            i--; //Чтобы не пропустить следующий
         }
         else
         {
@@ -61,7 +62,7 @@ std::vector<std::string> chars_make(std::string main)
     return cooked;
 }
 
-float answer_maker (std::vector<std::string> cooked)
+double answer_maker (std::vector<std::string> cooked)
 {
     int begin = 0; int end = 0;
     while (cooked.size() != 1)
@@ -80,20 +81,20 @@ float answer_maker (std::vector<std::string> cooked)
             {
                 if (cooked[i] == "*")
                 {
-                    float currentInt = std::stof(cooked[i-1]) * std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() * QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "/")
                 {
-                    if (cooked[i+1] != "0")
+                    if (cooked[i+1] != "0" && QString::fromStdString(cooked[i+1]).toDouble() != 0.0)
                     {
-                        float currentInt = std::stof(cooked[i-1]) / std::stof(cooked[i+1]);
+                        double currentInt = QString::fromStdString(cooked[i-1]).toDouble() / QString::fromStdString(cooked[i+1]).toDouble();
                         cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                         cooked.erase(cooked.begin() + i); // Удаляем оператор
-                        cooked[i-1] = std::to_string(currentInt);
+                        cooked[i-1] = QString::number(currentInt).toStdString();
                         i--; // Чтобы не пропустить следующий элемент
                     }
                 }
@@ -102,18 +103,18 @@ float answer_maker (std::vector<std::string> cooked)
             {
                 if (cooked[i] == "+")
                 {
-                    float currentInt = std::stof(cooked[i-1]) + std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() + QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "-")
                 {
-                    float currentInt = std::stof(cooked[i-1]) - std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() - QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
             }
@@ -127,26 +128,26 @@ float answer_maker (std::vector<std::string> cooked)
             {
                 if (cooked[i] == "*")
                 {
-                    float currentInt = std::stof(cooked[i-1]) * std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() * QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "/")
                 {
-                    if (cooked[i+1] != "0")
+                    if (cooked[i+1] != "0" && QString::fromStdString(cooked[i+1]).toDouble() != 0.0)
                     {
-                        float currentInt = std::stof(cooked[i-1]) / std::stof(cooked[i+1]);
+                        double currentInt = QString::fromStdString(cooked[i-1]).toDouble() / QString::fromStdString(cooked[i+1]).toDouble();
                         cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                         cooked.erase(cooked.begin() + i); // Удаляем оператор
-                        cooked[i-1] = std::to_string(currentInt);
+                        cooked[i-1] = QString::number(currentInt).toStdString();
                         i--; // Чтобы не пропустить следующий элемент
                     }
                     else
                     {
                         QMessageBox::warning(nullptr, "Error", "Деление на 0");
-                        return 0;
+                        return std::numeric_limits<double>::quiet_NaN(); // Возвращаем NaN как индикатор ошибки
                     }
                 }
             }
@@ -154,18 +155,18 @@ float answer_maker (std::vector<std::string> cooked)
             {
                 if (cooked[i] == "+")
                 {
-                    float currentInt = std::stof(cooked[i-1]) + std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() + QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
                 else if (cooked[i] == "-")
                 {
-                    float currentInt = std::stof(cooked[i-1]) - std::stof(cooked[i+1]);
+                    double currentInt = QString::fromStdString(cooked[i-1]).toDouble() - QString::fromStdString(cooked[i+1]).toDouble();
                     cooked.erase(cooked.begin() + i + 1); // Удаляем операнд
                     cooked.erase(cooked.begin() + i); // Удаляем оператор
-                    cooked[i-1] = std::to_string(currentInt);
+                    cooked[i-1] = QString::number(currentInt).toStdString();
                     i--; // Чтобы не пропустить следующий элемент
                 }
             }
@@ -173,7 +174,7 @@ float answer_maker (std::vector<std::string> cooked)
 
     }
 
-    float answer = std::stof(cooked[0]);
+    double answer = QString::fromStdString(cooked[0]).toDouble();
 
     return answer;
 }
@@ -189,6 +190,10 @@ double answer_function(std::string main)
     else
     {
         double answer = answer_maker(cooked);
+        if (std::isnan(answer))
+        {
+            return 0; // Или другое значение по умолчанию для ошибки
+        }
         return answer;
     }
 }
