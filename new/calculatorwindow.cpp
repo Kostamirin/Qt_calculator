@@ -91,10 +91,10 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(open, 3, 3); //!     (
     layout->addWidget(close, 3, 4); //!    )
     layout->addWidget(second, 4, 0);
-    layout->addWidget(equal, 4, 4);
     layout->addWidget(zero, 4, 1);
-    layout->addWidget(clear, 4, 2);
-    layout->addWidget(dot, 4, 3);
+    layout->addWidget(dot, 4, 2);
+    layout->addWidget(equal, 4, 3);
+    layout->addWidget(clear, 4, 4);
 
     // Define button styles with comments for easy customization
     QString buttonStyle = R"(
@@ -132,7 +132,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
         QPushButton[text="("],
         QPushButton[text=')']
         {
-            background-color: #FFA500;
+            background-color: #ed903d;
             color: white;
         }
 
