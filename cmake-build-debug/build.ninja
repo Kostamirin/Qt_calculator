@@ -81,6 +81,14 @@ build CMakeFiles/QT_GUI_project.dir/new/secondwindow.cpp.o: CXX_COMPILER__QT_GUI
   OBJECT_DIR = CMakeFiles/QT_GUI_project.dir
   OBJECT_FILE_DIR = CMakeFiles/QT_GUI_project.dir/new
 
+build CMakeFiles/QT_GUI_project.dir/new/head.cpp.o: CXX_COMPILER__QT_GUI_project_unscanned_Debug /home/kleymuner2131/CLionProjects/Qt_calculator/new/head.cpp || cmake_object_order_depends_target_QT_GUI_project
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/QT_GUI_project.dir/new/head.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -fPIC
+  INCLUDES = -isystem /home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt6/QtCore -isystem /usr/include/x86_64-linux-gnu/qt6 -isystem /usr/lib/x86_64-linux-gnu/qt6/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt6/QtGui -isystem /usr/include/x86_64-linux-gnu/qt6/QtWidgets
+  OBJECT_DIR = CMakeFiles/QT_GUI_project.dir
+  OBJECT_FILE_DIR = CMakeFiles/QT_GUI_project.dir/new
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target QT_GUI_project
@@ -89,7 +97,7 @@ build CMakeFiles/QT_GUI_project.dir/new/secondwindow.cpp.o: CXX_COMPILER__QT_GUI
 #############################################
 # Link the executable QT_GUI_project
 
-build QT_GUI_project: CXX_EXECUTABLE_LINKER__QT_GUI_project_Debug CMakeFiles/QT_GUI_project.dir/QT_GUI_project_autogen/mocs_compilation.cpp.o CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o CMakeFiles/QT_GUI_project.dir/new/main.cpp.o CMakeFiles/QT_GUI_project.dir/new/secondwindow.cpp.o | /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || QT_GUI_project_autogen QT_GUI_project_autogen_timestamp_deps
+build QT_GUI_project: CXX_EXECUTABLE_LINKER__QT_GUI_project_Debug CMakeFiles/QT_GUI_project.dir/QT_GUI_project_autogen/mocs_compilation.cpp.o CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o CMakeFiles/QT_GUI_project.dir/new/main.cpp.o CMakeFiles/QT_GUI_project.dir/new/secondwindow.cpp.o CMakeFiles/QT_GUI_project.dir/new/head.cpp.o | /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so || QT_GUI_project_autogen QT_GUI_project_autogen_timestamp_deps
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2  /usr/lib/x86_64-linux-gnu/libQt6Gui.so.6.4.2  /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2  /usr/lib/x86_64-linux-gnu/libGLX.so  /usr/lib/x86_64-linux-gnu/libOpenGL.so
   OBJECT_DIR = CMakeFiles/QT_GUI_project.dir

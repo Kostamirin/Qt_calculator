@@ -22,6 +22,7 @@ bool is_this_real(std::vector<std::string> cooked)
         if (cooked[i] != "*" && cooked[i] != "/" && cooked[i] != "+"
             &&cooked[i] != "-" && cooked[i] != "(" && cooked[i] != ")")
         {
+            if (cooked[i][0] == '.'){return false;}
             for (int j = 0; j < cooked[i].size(); j++)
             {
                 if (cooked[i][j] == '.')
@@ -33,6 +34,7 @@ bool is_this_real(std::vector<std::string> cooked)
             dots = 0;
         }
     }
+    return true;
 }
 
 std::vector<std::string> chars_make(std::string main)
@@ -43,17 +45,16 @@ std::vector<std::string> chars_make(std::string main)
         if (main[i] >= '0' && main[i] <='9')
         {
             std::string number = "";
-            while (main[i] >= '0' && main[i] <='9')
+            while (main[i] >= '0' && main[i] <='9' || main[i] == '.')
             {
                 number += main[i];
                 i++;
             }
             cooked.push_back(number);
-            i--;
+            i--; //Чтобы не пропустить следущий
         }
         else
         {
-            //! todo: Важная состовляющая
             cooked.push_back(std::string(1, main[i])); //*cooked.push_back(std::string(main[i]));
         }
     }
@@ -145,7 +146,7 @@ float answer_maker (std::vector<std::string> cooked)
                     else
                     {
                         QMessageBox::warning(nullptr, "Error", "Деление на 0");
-                        return NULL;
+                        return 0;
                     }
                 }
             }
@@ -180,7 +181,14 @@ float answer_maker (std::vector<std::string> cooked)
 double answer_function(std::string main)
 {
     std::vector<std::string> cooked = chars_make(main);
-    float answer = answer_maker(cooked);
-
-    return answer;
+    if (is_this_real(cooked) == false)
+    {
+        QMessageBox::warning(nullptr, "Error", "Простите, но это выглядит так, будто введенное Вами выражение некорректно. Попробуйте ещё раз.");
+        return 0;
+    }
+    else
+    {
+        double answer = answer_maker(cooked);
+        return answer;
+    }
 }

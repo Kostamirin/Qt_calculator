@@ -6,6 +6,7 @@ QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/moc_predefs.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/new/calculatorwindow.h \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/new/head.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/new/main.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/new/secondwindow.h \

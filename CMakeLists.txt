@@ -17,6 +17,7 @@ add_executable(QT_GUI_project
         new/calculatorwindow.cpp
         new/main.cpp
         new/secondwindow.cpp
+        new/head.cpp
 )
 
 target_link_libraries(QT_GUI_project

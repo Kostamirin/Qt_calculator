@@ -6,7 +6,11 @@
 #include <QPushButton>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class CalculatorWindow; }
+namespace Ui
+{
+    class CalculatorWindow;
+
+}
 QT_END_NAMESPACE
 
 class CalculatorWindow : public QMainWindow
@@ -18,6 +22,7 @@ public:
     ~CalculatorWindow();
 
 private slots:
+    //Functional buttons
     void secondButtonClicked();
     void sumClicked();
     void subClicked();
@@ -25,6 +30,7 @@ private slots:
     void divClicked();
     void equalClicked();
     void clearClicked();
+    //Number buttons
     void oneButtonClicked();
     void twoButtonClicked();
     void threeButtonClicked();
@@ -37,6 +43,7 @@ private slots:
     void zeroButtonClicked();
     void openButtonClicked();
     void closeButtonClicked();
+    void dotButtonClicked();
 
 private:
     QLineEdit *display;
