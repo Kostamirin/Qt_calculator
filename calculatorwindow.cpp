@@ -89,8 +89,8 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(seven, 3, 0);
     layout->addWidget(eight, 3, 1);
     layout->addWidget(nine, 3, 2);
-    layout->addWidget(open, 3, 3); //!     (
-    layout->addWidget(close, 3, 4); //!    )
+    layout->addWidget(open, 3, 3);
+    layout->addWidget(close, 3, 4);
     layout->addWidget(second, 4, 0);
     layout->addWidget(zero, 4, 1);
     layout->addWidget(dot, 4, 2);
