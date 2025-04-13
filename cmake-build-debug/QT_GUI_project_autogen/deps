@@ -11,6 +11,7 @@ QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/main.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.h \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/styles/resources.qrc \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
