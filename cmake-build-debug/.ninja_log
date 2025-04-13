@@ -56,3 +56,10 @@
 2	11	1744531177183124459	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
 11	1976	1744531177192124309	CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o	929ea4b6bebff35d
 1976	2259	1744531179157091549	QT_GUI_project	e79e9c2e9a11db7d
+3	12	1744531722137733171	QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+3	12	1744531722137733171	QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+3	12	1744531722137733171	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/timestamp	577c5b67cc8b07e1
+3	12	1744531722137733171	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/QT_GUI_project_autogen/mocs_compilation.cpp	577c5b67cc8b07e1
+12	1812	1744531722146733041	CMakeFiles/QT_GUI_project.dir/new/head.cpp.o	256c41c7c497ffe2
+12	2056	1744531722146733041	CMakeFiles/QT_GUI_project.dir/new/calculatorwindow.cpp.o	929ea4b6bebff35d
+2056	2341	1744531724190703412	QT_GUI_project	e79e9c2e9a11db7d
