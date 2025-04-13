@@ -18,6 +18,10 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     QWidget *centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
     QGridLayout *layout = new QGridLayout(centralWidget);
+    
+    // Set spacing between buttons
+    layout->setSpacing(6);
+    layout->setContentsMargins(10, 10, 10, 10);
 
     // Display
     display = new QLineEdit();
@@ -91,6 +95,72 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(zero, 4, 1);
     layout->addWidget(clear, 4, 2);
     layout->addWidget(dot, 4, 3);
+
+    // Define button styles with comments for easy customization
+    QString buttonStyle = R"(
+        /* Common style for all buttons */
+        QPushButton {
+            min-width: 50px;
+            min-height: 50px;
+            border: 1px solid #808080;
+            border-radius: 4px;
+            margin: 2px;
+        }
+
+        /* Style for number buttons */
+        QPushButton[text="0"],
+        QPushButton[text="1"],
+        QPushButton[text="2"],
+        QPushButton[text="3"],
+        QPushButton[text="4"],
+        QPushButton[text="5"],
+        QPushButton[text="6"],
+        QPushButton[text="7"],
+        QPushButton[text="8"],
+        QPushButton[text="9"],
+        QPushButton[text="."] {
+            background-color: #404040;
+            color: white;
+        }
+
+        /* Style for operation buttons */
+        QPushButton[text="+"],
+        QPushButton[text="-"],
+        QPushButton[text="*"],
+        QPushButton[text="/"],
+        QPushButton[text="="],
+        QPushButton[text="("],
+        QPushButton[text=')']
+        {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        /* Special style for Clear button */
+        QPushButton[text="Cl"] {
+            background-color: #FF4444;
+            color: white;
+        }
+
+        /* Special style for 2nd button - easily customizable */
+        QPushButton[text="2nd"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Hover effect for all buttons */
+        QPushButton:hover {
+            background-color: darker(@background-color, 110%);
+        }
+
+        /* Pressed effect for all buttons */
+        QPushButton:pressed {
+            background-color: darker(@background-color, 120%);
+            border-style: inset;
+        }
+    )";
+
+    centralWidget->setStyleSheet(buttonStyle);
 }
 
 CalculatorWindow::~CalculatorWindow()
