@@ -110,6 +110,7 @@ void CalculatorWindow::closeButtonClicked()
 
 }
 void CalculatorWindow::sumClicked() //! Functional button S
+//todo: Предотвратить повторное нажатие знака, его выведение и сохранение в строку
 {
     if (main_string[main_string.size()-1] != '+')
     {
