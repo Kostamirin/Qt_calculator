@@ -1,6 +1,6 @@
 #include "calculatorwindow.h"
-#include "head.cpp"
-#include "secondwindow.h" // Include header for the second window
+#include "head.h"
+#include "secondwindow.h"
 
 #include <iostream>
 #include <string>
@@ -8,6 +8,8 @@
 #include <QPushButton>
 #include <QDebug>
 #include <QApplication>
+#include <QMessageBox>
+#include <QFile>
 
 std::string main_string = "";
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
@@ -17,6 +19,10 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     QWidget *centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
     QGridLayout *layout = new QGridLayout(centralWidget);
+    
+    // Set spacing between buttons
+    layout->setSpacing(6);
+    layout->setContentsMargins(10, 10, 10, 10);
 
     // Display
     display = new QLineEdit();
@@ -24,6 +30,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     display->setAlignment(Qt::AlignRight);
     layout->addWidget(display, 0, 0, 1, 5); // Span across 4 columns
 
+    // Number buttons
     QPushButton *one = new QPushButton("1");
     connect(one, &QPushButton::clicked, this, &CalculatorWindow::oneButtonClicked);
     QPushButton *two = new QPushButton("2");
@@ -44,6 +51,7 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     connect(nine, &QPushButton::clicked, this, &CalculatorWindow::nineButtonClicked);
     QPushButton *zero = new QPushButton("0");
     connect(zero, &QPushButton::clicked, this, &CalculatorWindow::zeroButtonClicked);
+    //Functional buttons
     QPushButton *add = new QPushButton("+");
     connect(add, &QPushButton::clicked, this, &CalculatorWindow::sumClicked);
     QPushButton *sub = new QPushButton("-");
@@ -58,10 +66,12 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     connect(clear, &QPushButton::clicked, this, &CalculatorWindow::clearClicked);
     QPushButton *second = new QPushButton("2nd");
     connect(second, &QPushButton::clicked, this, &CalculatorWindow::secondButtonClicked);
-    QPushButton *open = new QPushButton("("); //todo: Создать функционал для этих скобок
+    QPushButton *open = new QPushButton("(");
     connect(open, &QPushButton::clicked, this, &CalculatorWindow::openButtonClicked);
     QPushButton *close = new QPushButton(")");
     connect(close, &QPushButton::clicked, this, &CalculatorWindow::closeButtonClicked);
+    QPushButton *dot = new QPushButton(".");
+    connect(dot, &QPushButton::clicked, this, &CalculatorWindow::dotButtonClicked);
 
 
     // --- Placeholder for buttons ---
@@ -79,12 +89,21 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(seven, 3, 0);
     layout->addWidget(eight, 3, 1);
     layout->addWidget(nine, 3, 2);
-    layout->addWidget(open, 3, 3); //!     (
-    layout->addWidget(close, 3, 4); //!    )
+    layout->addWidget(open, 3, 3);
+    layout->addWidget(close, 3, 4);
     layout->addWidget(second, 4, 0);
-    layout->addWidget(equal, 4, 3, 1,2);
     layout->addWidget(zero, 4, 1);
-    layout->addWidget(clear, 4, 2);
+    layout->addWidget(dot, 4, 2);
+    layout->addWidget(equal, 4, 3);
+    layout->addWidget(clear, 4, 4);
+
+    // Load styles from external file
+    QFile styleFile(":/styles/calculator.qss");
+    if (styleFile.open(QFile::ReadOnly)) {
+        QString styleSheet = QLatin1String(styleFile.readAll());
+        centralWidget->setStyleSheet(styleSheet);
+        styleFile.close();
+    }
 }
 
 CalculatorWindow::~CalculatorWindow()
@@ -111,7 +130,7 @@ void CalculatorWindow::closeButtonClicked()
 }
 void CalculatorWindow::sumClicked() //! Functional button S
 {
-    if (main_string[main_string.size()-1] != '+')
+    if (main_string[main_string.size()-1] != '+' && main_string.size() != 0)
     {
         main_string += "+";
         display->setText(display->text()+="+");
@@ -120,7 +139,7 @@ void CalculatorWindow::sumClicked() //! Functional button S
 }
 void CalculatorWindow::subClicked()
 {
-    if (main_string[main_string.size()-1] != '-')
+    if (main_string[main_string.size()-1] != '-' && main_string.size() != 0)
     {
         main_string += "-";
         display->setText(display->text()+="-");
@@ -129,7 +148,7 @@ void CalculatorWindow::subClicked()
 }
 void CalculatorWindow::mulClicked()
 {
-    if (main_string[main_string.size()-1] != '*')
+    if (main_string[main_string.size()-1] != '*' && main_string.size() != 0)
     {
         main_string += "*";
         display->setText(display->text()+="*");
@@ -138,7 +157,7 @@ void CalculatorWindow::mulClicked()
 }
 void CalculatorWindow::divClicked()
 {
-    if (main_string[main_string.size()-1] != '/')
+    if (main_string[main_string.size()-1] != '/' && main_string.size() != 0)
     {
         main_string += "/";
         display->setText(display->text()+="/");
@@ -203,6 +222,16 @@ void CalculatorWindow::zeroButtonClicked() //! Numbers button E
     display->setText(display->text()+= "0");
 }
 
+void CalculatorWindow::dotButtonClicked()
+{
+    if (main_string[main_string.size()-1] != '.')
+    {
+        main_string += ".";
+        display->setText(display->text()+=".");
+    }
+    else{NULL;}
+}
+
 void CalculatorWindow::equalClicked() //! Equal button
 {
     if (is_this_balanced(main_string) == false)
@@ -222,8 +251,17 @@ void CalculatorWindow::equalClicked() //! Equal button
     }
     else
     {
-        display->setText(QString::number(answer));
+        display->setText(display->text() + "= "+QString::number(answer));
+        //todo: реализовать анализ нецелых чисел
+        if (std::floor(answer) == answer) // Если ответ целочисленный
+        {
+            main_string = std::to_string(static_cast<int>(answer));
+        }
+        else
+        {
+            main_string = std::to_string(answer);
+        }
     }
 
-}
 
+}

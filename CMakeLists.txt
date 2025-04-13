@@ -14,9 +14,11 @@ find_package(Qt6 COMPONENTS
   REQUIRED)
 
 add_executable(QT_GUI_project
-        new/calculatorwindow.cpp
-        new/main.cpp
-        new/secondwindow.cpp
+        calculatorwindow.cpp
+        main.cpp
+        secondwindow.cpp
+        head.cpp
+        styles/resources.qrc
 )
 
 target_link_libraries(QT_GUI_project
@@ -24,4 +26,3 @@ target_link_libraries(QT_GUI_project
   Qt::Gui
   Qt::Widgets
 )
-
