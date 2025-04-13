@@ -14,6 +14,26 @@ bool is_this_balanced(std::string main)
     if (balance == 0){return true;}
     else{return false;}
 }
+bool is_this_real(std::vector<std::string> cooked)
+{
+    int dots = 0;
+    for (int i = 0; i < cooked.size(); i++)
+    {
+        if (cooked[i] != "*" && cooked[i] != "/" && cooked[i] != "+"
+            &&cooked[i] != "-" && cooked[i] != "(" && cooked[i] != ")")
+        {
+            for (int j = 0; j < cooked[i].size(); j++)
+            {
+                if (cooked[i][j] == '.')
+                {
+                    dots++;
+                    if (dots>1){return false;}
+                }
+            }
+            dots = 0;
+        }
+    }
+}
 
 std::vector<std::string> chars_make(std::string main)
 {
