@@ -177,6 +177,18 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/arithmetic_progression.h",
+			"MU",
+			"6PTUM67PK3/moc_arithmetic_progression.cpp",
+			null
+		],
+		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/secondwindow.h",
+			"MU",
+			"6PTUM67PK3/moc_secondwindow.cpp",
+			null
+		],
+		[
 			"/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_calculatorwindow.cpp",
@@ -186,12 +198,6 @@
 			"/home/kleymuner2131/CLionProjects/Qt_calculator/head.h",
 			"MU",
 			"EWIEGA46WW/moc_head.cpp",
-			null
-		],
-		[
-			"/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_secondwindow.cpp",
 			null
 		]
 	],
@@ -253,6 +259,16 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/arithmetic_progression.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/secondwindow.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.cpp",
 			"MU",
 			null
@@ -264,11 +280,6 @@
 		],
 		[
 			"/home/kleymuner2131/CLionProjects/Qt_calculator/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.cpp",
 			"MU",
 			null
 		]

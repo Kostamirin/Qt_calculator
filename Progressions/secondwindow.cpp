@@ -1,7 +1,7 @@
 #include "secondwindow.h"
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QMessageBox> // For Help dialog
+#include <QMessageBox>
 #include <QDebug>
 
 SecondWindow::SecondWindow(QWidget *parent) :
@@ -39,11 +39,11 @@ SecondWindow::~SecondWindow()
 
 void SecondWindow::handleArithmeticProgression()
 {
-    qDebug() << "Arithmetic Progression clicked (Placeholder)";
-    // TODO: Implement Arithmetic Progression functionality or window
-    QMessageBox::information(this, "WIP", "Arithmetic Progression - Not Implemented Yet");
-    // Potentially close this dialog after showing the new one/doing the work
-    // accept();
+    arithmeticProgressionWindow *window = new arithmeticProgressionWindow(this);
+    delete this;
+    window->show();
+    window->exec();
+    delete window;
 }
 
 void SecondWindow::handleGeometricProgression()
