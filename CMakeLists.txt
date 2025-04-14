@@ -16,9 +16,10 @@ find_package(Qt6 COMPONENTS
 add_executable(QT_GUI_project
         calculatorwindow.cpp
         main.cpp
-        secondwindow.cpp
+        Progressions/secondwindow.cpp
         head.cpp
         styles/resources.qrc
+        Progressions/arithmetic_progression.cpp
 )
 
 target_link_libraries(QT_GUI_project
