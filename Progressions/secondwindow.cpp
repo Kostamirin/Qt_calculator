@@ -1,4 +1,5 @@
 #include "secondwindow.h"
+#include "arithmetic_progression.cpp"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QMessageBox>
