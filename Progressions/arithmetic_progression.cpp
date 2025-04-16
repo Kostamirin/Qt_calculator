@@ -8,40 +8,41 @@
 #include <QLabel>
 #include <QApplication>
 
-arithmeticProgressionWindow::arithmeticProgressionWindow(QWidget *parent) : QWindow(parent) {
+arithmetic_progression::arithmetic_progression(QWidget *parent) : QMainWindow(parent) {
     // Set up the layout for the arithmetic progression window
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    
+
+
     // Create horizontal layout for each parameter
     QHBoxLayout *firstLayout = new QHBoxLayout();
     QLabel *firstLabel = new QLabel("First Term (a_1):");
-    firstInput_ = new QLineEdit();
+    firstInput = new QLineEdit();
     firstLayout->addWidget(firstLabel);
-    firstLayout->addWidget(firstInput_);
+    firstLayout->addWidget(firstInput);
 
     QHBoxLayout *differenceLayout = new QHBoxLayout();
     QLabel *differenceLabel = new QLabel("Common Difference (d):");
-    differenceInput_ = new QLineEdit();
+    differenceInput = new QLineEdit();
     differenceLayout->addWidget(differenceLabel);
-    differenceLayout->addWidget(differenceInput_);
+    differenceLayout->addWidget(differenceInput);
 
     QHBoxLayout *termsLayout = new QHBoxLayout();
     QLabel *termsLabel = new QLabel("Number of Terms (n):");
-    termsInput_ = new QLineEdit();
+    termsInput = new QLineEdit();
     termsLayout->addWidget(termsLabel);
-    termsLayout->addWidget(termsInput_);
+    termsLayout->addWidget(termsInput);
 
     QHBoxLayout *lastTermLayout = new QHBoxLayout();
     QLabel *lastTermLabel = new QLabel("Last Term (a_n):");
-    lastTermInput_ = new QLineEdit();
+    lastTermInput = new QLineEdit();
     lastTermLayout->addWidget(lastTermLabel);
-    lastTermLayout->addWidget(lastTermInput_);
+    lastTermLayout->addWidget(lastTermInput);
 
     QHBoxLayout *sumLayout = new QHBoxLayout();
     QLabel *sumLabel = new QLabel("Sum of Terms (S_n):");
-    sumInput_ = new QLineEdit();
+    sumInput = new QLineEdit();
     sumLayout->addWidget(sumLabel);
-    sumLayout->addWidget(sumInput_);
+    sumLayout->addWidget(sumInput);
 
     // Add horizontal layouts to the main layout
     mainLayout->addLayout(firstLayout);

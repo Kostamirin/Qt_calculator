@@ -1,6 +1,6 @@
 #include "calculatorwindow.h"
 #include "head.h"
-#include "secondwindow.h"
+#include "Progressions/secondwindow.h"
 
 #include <iostream>
 #include <string>

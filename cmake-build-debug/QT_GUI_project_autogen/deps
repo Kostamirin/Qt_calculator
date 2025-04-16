@@ -1,5 +1,9 @@
 QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/CMakeLists.txt \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/arithmetic_progression.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/arithmetic_progression.h \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/secondwindow.cpp \
+	/home/kleymuner2131/CLionProjects/Qt_calculator/Progressions/secondwindow.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/calculatorwindow.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/cmake-build-debug/CMakeFiles/3.30.5/CMakeCCompiler.cmake \
@@ -9,8 +13,6 @@ QT_GUI_project_autogen/timestamp: \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/head.cpp \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/head.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/main.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.cpp \
-	/home/kleymuner2131/CLionProjects/Qt_calculator/secondwindow.h \
 	/home/kleymuner2131/CLionProjects/Qt_calculator/styles/resources.qrc \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCInformation.cmake \
 	/home/kleymuner2131/other/clion-2024.3/bin/cmake/linux/x64/share/cmake-3.30/Modules/CMakeCXXInformation.cmake \
@@ -332,6 +334,10 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QMargins \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -354,6 +360,7 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
@@ -375,6 +382,7 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qobject_impl.h \
@@ -416,6 +424,7 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/QWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
@@ -436,6 +445,8 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qsurface.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
@@ -444,17 +455,16 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindow.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDialog \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
-	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
-	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qdialog.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
