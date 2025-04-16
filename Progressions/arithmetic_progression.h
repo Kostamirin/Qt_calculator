@@ -24,8 +24,8 @@ private slots:
     void startButtonClicked();
 
 private:
-
-
+    //Enter some variables for the progression
+    Ui::arithmetic_progression *ui;
 };
 
 
