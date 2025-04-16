@@ -45,7 +45,7 @@ void SecondWindow::handleArithmeticProgression()
     window->setAttribute(Qt::WA_DeleteOnClose); // Ensure the window is deleted when closed
     window->show(); // Show the window non-modally
     // window->exec(); // Incorrect: QMainWindow has no exec()
-    // delete window; // Incorrect: Window deleted immediately. Let WA_DeleteOnClose handle it.
+    // delete window; //Incorrect: Window deleted immediately. Let WA_DeleteOnClose handle it.
 }
 
 void SecondWindow::handleGeometricProgression()
