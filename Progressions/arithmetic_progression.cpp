@@ -9,7 +9,8 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QMessageBox>
-#include <cmath> // For std::sqrt
+#include <cmath> // For std::sqrt, std::isnan, std::round, std::fmod
+#include <limits> // For std::numeric_limits
 
 arithmetic_progression::arithmetic_progression(QWidget *parent) : QMainWindow(parent) {
     // Create a central widget and set it as the main window's central widget
@@ -81,34 +82,61 @@ void arithmetic_progression::calculation_button_clicked()
 
 }
 
+// Define sentinel values for unknown inputs
+const float UNKNOWN_FLOAT = std::numeric_limits<float>::quiet_NaN();
+const int   UNKNOWN_INT   = std::numeric_limits<int>::min();
+
+// Helper function to check if a float value represents an unknown input
+inline bool isUnknown(float val) {
+    return std::isnan(val);
+}
+
+// Helper function to check if an int value represents an unknown input
+inline bool isUnknown(int val) {
+    return val == UNKNOWN_INT;
+}
+
 float arithmetic_progression::calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms)
 {
+    int originalTermNumber = termNumber; // Store originals to know what was calculated
+    float originalTermValue = termValue;
+    float originalStep = step;
+    float originalSumOfTerms = sumOfTerms;
+
     // Case 1: Calculate n if S_n, a_1 and a_n are known
-    if (sumOfTerms != -1 && firstTerm != -1 && termValue != -1 && termNumber == -1)
+    if (!isUnknown(sumOfTerms) && !isUnknown(firstTerm) && !isUnknown(termValue) && isUnknown(termNumber))
     {
         if (firstTerm + termValue != 0) { // Avoid division by zero
-            termNumber = static_cast<int>(std::round((2 * sumOfTerms) / (firstTerm + termValue)));
-            qDebug() << "Calculated term number (n) from S_n, a_1, a_n: " << termNumber;
+            double n_calc = (2.0 * sumOfTerms) / (firstTerm + termValue);
+            // Check if result is a positive integer
+            if (n_calc > 0 && std::round(n_calc) == n_calc) {
+                termNumber = static_cast<int>(std::round(n_calc));
+                qDebug() << "Calculated term number (n) from S_n, a_1, a_n: " << termNumber;
+            } else {
+                 qDebug() << "Error: Calculation resulted in non-positive or non-integer term number (n).";
+                 // termNumber remains UNKNOWN_INT
+            }
         } else {
             qDebug() << "Error: Cannot calculate term number (n) - division by zero (a_1 + a_n = 0).";
-            termNumber = -1; // Indicate error or impossible calculation
+            // termNumber remains UNKNOWN_INT
         }
     }
     // Case 2: Calculate n if S_n, a_1 and d are known
-    else if (sumOfTerms != -1 && firstTerm != -1 && step != -1 && termNumber == -1)
+    else if (!isUnknown(sumOfTerms) && !isUnknown(firstTerm) && !isUnknown(step) && isUnknown(termNumber))
     {
         if (step == 0) {
             if (sumOfTerms == 0 && firstTerm == 0) {
                  qDebug() << "Cannot determine n: Progression is all zeros.";
-                 termNumber = -1; // Or perhaps indicate infinite possibilities if sum is 0
+                 // termNumber remains UNKNOWN_INT
             } else if (firstTerm != 0 && sumOfTerms / firstTerm > 0 && std::fmod(sumOfTerms, firstTerm) == 0 ) {
                  termNumber = static_cast<int>(sumOfTerms / firstTerm);
                  qDebug() << "Calculated term number (n) for constant progression: " << termNumber;
             } else {
                  qDebug() << "Error: Cannot determine n for constant progression with given sum.";
-                 termNumber = -1;
+                 // termNumber remains UNKNOWN_INT
             }
-        } else {
+        }
+        else {
             // Quadratic equation derived from S_n = n/2 * [2a_1 + (n-1)d]
             // => 2*S_n = n * (2a_1 + nd - d)
             // => 2*S_n = 2a_1*n + d*n^2 - d*n
@@ -134,84 +162,84 @@ float arithmetic_progression::calculateArithmeticProgression(float firstTerm, fl
                     qDebug() << "Calculated term number (n) from S_n, a_1, d (solution 2): " << termNumber;
                 } else {
                     qDebug() << "Error: No valid positive integer term number (n) found.";
-                    termNumber = -1; // Indicate error
+                    // termNumber remains UNKNOWN_INT
                 }
             }
             else
             {
                 qDebug() << "Error: Cannot calculate term number (n), negative discriminant in quadratic formula.";
-                termNumber = -1; // Indicate error
+                // termNumber remains UNKNOWN_INT
             }
         }
     }
     // Case 3: Find a_n if a_1, n, and S_n are known
-    else if (termValue == -1 && firstTerm != -1 && termNumber != -1 && sumOfTerms != -1)
+    else if (isUnknown(termValue) && !isUnknown(firstTerm) && !isUnknown(termNumber) && !isUnknown(sumOfTerms))
     {
-        if (termNumber != 0) { // Avoid division by zero
+        if (!isUnknown(termNumber) && termNumber != 0) { // Avoid division by zero
              termValue = (2.0 * sumOfTerms / termNumber) - firstTerm;
              qDebug() << "Calculated value of " << termNumber << "-th term (a_n) from S_n, a_1, n: " << termValue;
         } else {
-             qDebug() << "Error: Cannot calculate a_n - term number (n) is zero.";
-             termValue = std::numeric_limits<float>::quiet_NaN(); // Indicate error
+             qDebug() << "Error: Cannot calculate a_n - term number (n) is zero or unknown.";
+             // termValue remains UNKNOWN_FLOAT (NaN)
         }
     }
     // Case 4: Find d if a_n, a_1 and n are known
-    else if (step == -1 && termValue != -1 && firstTerm != -1 && termNumber != -1)
+    else if (isUnknown(step) && !isUnknown(termValue) && !isUnknown(firstTerm) && !isUnknown(termNumber))
     {
-        if (termNumber > 1) {
+        if (!isUnknown(termNumber) && termNumber > 1) {
             step = (termValue - firstTerm) / (termNumber - 1);
             qDebug() << "Calculated step of progression (d) from a_n, a_1, n: " << step;
-        } else if (termNumber == 1) {
+        } else if (!isUnknown(termNumber) && termNumber == 1) {
              if (termValue == firstTerm) {
                  qDebug() << "Step (d) is indeterminate when n=1 (any d is possible).";
-                 step = std::numeric_limits<float>::quiet_NaN(); // Indeterminate
+                 // step remains UNKNOWN_FLOAT (NaN)
              } else {
                  qDebug() << "Error: Inconsistent data - a_n != a_1 when n=1.";
-                 step = std::numeric_limits<float>::quiet_NaN(); // Error
+                 // step remains UNKNOWN_FLOAT (NaN)
              }
-        } else {
-             qDebug() << "Error: Cannot calculate step (d) - term number (n) must be >= 1.";
-             step = std::numeric_limits<float>::quiet_NaN(); // Error
-        }
-    }
-    // Case 5: Calculate a_n and/or S_n if n, a_1 and d are known
-    else if (termNumber != -1 && firstTerm != -1 && step != -1)
-    {
-        // Calculate a_n only if it wasn't provided
-        if (termValue == -1) {
-            termValue = firstTerm + (termNumber - 1) * step;
-            qDebug() << "Calculated value of " << termNumber << "-th term (a_n) from a_1, n, d: " << termValue;
-        }
-        // Calculate S_n only if it wasn't provided
-        if (sumOfTerms == -1) {
-            // Use the calculated or provided a_n
-            if (termValue != -1) { // Ensure a_n is valid before calculating S_n
-                 sumOfTerms = termNumber * (firstTerm + termValue) / 2.0;
-                 qDebug() << "Calculated sum of first " << termNumber << " terms (S_n) from a_1, n, a_n: " << sumOfTerms;
-            } else {
-                 qDebug() << "Cannot calculate S_n because a_n could not be determined or wasn't provided.";
-                 sumOfTerms = std::numeric_limits<float>::quiet_NaN(); // Indicate error
-            }
-        }
-    }
-    else
-    {
-        qDebug() << "Error: Not enough data provided or ambiguous input to proceed with calculations.";
-        // Optionally, return a specific value or NaN to indicate failure/ambiguity
-        // For now, just returning one of the inputs as a placeholder might be confusing.
-        // Consider returning a special value like NaN or throwing an exception if appropriate.
-        return std::numeric_limits<float>::quiet_NaN(); // Example: Return NaN
-    }
+         } else {
+              qDebug() << "Error: Cannot calculate step (d) - term number (n) must be > 1.";
+              // step remains UNKNOWN_FLOAT (NaN)
+         }
+     }
+     // Case 5: Calculate a_n and/or S_n if n, a_1 and d are known
+     else if (!isUnknown(termNumber) && !isUnknown(firstTerm) && !isUnknown(step))
+     {
+         // Calculate a_n only if it wasn't provided
+         if (isUnknown(termValue)) {
+             termValue = firstTerm + (termNumber - 1) * step;
+             qDebug() << "Calculated value of " << termNumber << "-th term (a_n) from a_1, n, d: " << termValue;
+         }
+         // Calculate S_n only if it wasn't provided
+         if (isUnknown(sumOfTerms)) {
+             // Use the calculated or provided a_n
+             if (!isUnknown(termValue)) { // Ensure a_n is known before calculating S_n
+                  sumOfTerms = termNumber * (firstTerm + termValue) / 2.0;
+                  qDebug() << "Calculated sum of first " << termNumber << " terms (S_n) from a_1, n, a_n: " << sumOfTerms;
+             } else {
+                  qDebug() << "Cannot calculate S_n because a_n could not be determined or wasn't provided.";
+                  // sumOfTerms remains UNKNOWN_FLOAT (NaN)
+             }
+         }
+     }
 
-    // Decide what to return. The function signature implies returning *a* float.
-    // Which value is most relevant? This design seems flawed for a function returning a single float.
-    // Perhaps it should return a struct or modify parameters passed by reference/pointer.
-    // Or maybe it should primarily calculate ONE specific missing value based on context.
-    // For now, let's tentatively return the calculated 'termNumber' if it was calculated, else -1 or NaN.
-    // This needs clarification based on how the function is used.
-    if (termNumber != -1) return static_cast<float>(termNumber);
-    if (termValue != -1) return termValue;
-    if (step != -1) return step;
-    if (sumOfTerms != -1) return sumOfTerms;
-    return std::numeric_limits<float>::quiet_NaN(); // Return NaN if nothing specific was calculated
+     // --- Return logic ---
+     // The function should ideally return the value that was calculated.
+     // We check which variable was originally unknown and is now known.
+     if (isUnknown(originalTermNumber) && !isUnknown(termNumber)) {
+         return static_cast<float>(termNumber);
+     }
+     if (isUnknown(originalTermValue) && !isUnknown(termValue)) {
+         return termValue;
+     }
+     if (isUnknown(originalStep) && !isUnknown(step)) {
+         return step;
+     }
+     if (isUnknown(originalSumOfTerms) && !isUnknown(sumOfTerms)) {
+         return sumOfTerms;
+     }
+
+     // If no specific value was calculated (e.g., ambiguous input, error, or nothing was unknown)
+     // return NaN to indicate failure or no result.
+     return std::numeric_limits<float>::quiet_NaN(); // Return NaN if nothing specific was calculated
 }

@@ -22,7 +22,7 @@ public:
     // void calculationRequested(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
 
 private slots:
-    void on_calculateButton_clicked();
+    void calculation_button_clicked();
     // void on_resetButton_clicked();
 
 private:
@@ -30,11 +30,11 @@ private:
     // void calculateArithmeticProgression(); // This was likely a member function placeholder, the free function is separate
 
     // UI elements
-    QLineEdit *firstTermInput;
-    QLineEdit *stepInput;
-    QLineEdit *termNumberInput;
-    QLineEdit *termValueInput;
-    QLineEdit *sumOfTermsInput;
+    QLineEdit *firstInput;
+    QLineEdit *differenceInput;
+    QLineEdit *termsInput;
+    QLineEdit *lastTermInput;
+    QLineEdit *sumInput;
     QLabel *resultLabel;
     // QLabel *firstLabel;
     // ... other labels
