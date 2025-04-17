@@ -334,10 +334,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/QEvent \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/QMargins \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/QRect \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -360,7 +356,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
@@ -382,7 +377,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qobject_impl.h \
@@ -424,7 +418,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/QWindow \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
@@ -445,8 +438,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qregion.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgb.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qrgba64.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/qsurface.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/qsurfaceformat.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
@@ -455,7 +446,6 @@ QT_GUI_project_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiexports.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtguiglobal.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qtransform.h \
-	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindow.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtGui/qwindowdefs.h \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QDialog \
 	/usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \

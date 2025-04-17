@@ -1,5 +1,5 @@
 #include "secondwindow.h"
-#include "arithmetic_progression.cpp"
+#include "arithmetic_progression.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -44,8 +44,8 @@ void SecondWindow::handleArithmeticProgression()
     // delete this; // DANGEROUS: Do not delete the current window here
     window->setAttribute(Qt::WA_DeleteOnClose); // Ensure the window is deleted when closed
     window->show(); // Show the window non-modally
-    // window->exec(); // Incorrect: QMainWindow has no exec()
-    // delete window; //Incorrect: Window deleted immediately. Let WA_DeleteOnClose handle it.
+    //window->exec();
+    //delete window;
 }
 
 void SecondWindow::handleGeometricProgression()
