@@ -5,6 +5,7 @@
 #include <vector>
 
 bool is_this_balanced(std::string main);
+bool is_this_real(std::vector<std::string> cooked); // Добавляем прототип
 std::vector<std::string> chars_make(std::string main);
 // Изменяем тип возвращаемого значения на double
 double answer_maker(std::vector<std::string> cooked);
