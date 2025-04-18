@@ -11,7 +11,6 @@
 #include <QMessageBox>
 #include <QFile>
 
-std::string main_string = "";
 CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
 {
     // Basic window setup
@@ -29,6 +28,8 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     display->setReadOnly(true);
     display->setAlignment(Qt::AlignRight);
     layout->addWidget(display, 0, 0, 1, 5); // Span across 4 columns
+
+    currentExpression = "";
 
     // Number buttons
     QPushButton *one = new QPushButton("1");
@@ -97,13 +98,6 @@ CalculatorWindow::CalculatorWindow(QWidget *parent):QMainWindow(parent)
     layout->addWidget(equal, 4, 3);
     layout->addWidget(clear, 4, 4);
 
-    // Load styles from external file
-    QFile styleFile(":/styles/calculator.qss");
-    if (styleFile.open(QFile::ReadOnly)) {
-        QString styleSheet = QLatin1String(styleFile.readAll());
-        centralWidget->setStyleSheet(styleSheet);
-        styleFile.close();
-    }
 }
 
 CalculatorWindow::~CalculatorWindow()
@@ -112,156 +106,174 @@ CalculatorWindow::~CalculatorWindow()
 }
 void CalculatorWindow::secondButtonClicked()
 {
-    SecondWindow *second_win = new SecondWindow(this);
+    SecondWindow *second_win = new SecondWindow(this); // Устанавливаем родителя
+    second_win->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление при закрытии
+    second_win->setModal(true); // Делаем окно модальным
     second_win->show();
-    second_win->exec();
-    delete second_win;
+    // second_win->exec(); // exec() не нужен для модальных окон, открытых через show()
+    // delete second_win; // Удаление не нужно из-за WA_DeleteOnClose и родителя
 }
 void CalculatorWindow::openButtonClicked()
 {
-    main_string += "(";
+    currentExpression += "(";
     display->setText(display->text()+"(");
 }
 void CalculatorWindow::closeButtonClicked()
 {
-    main_string += ")";
+    currentExpression += ")";
     display->setText(display->text()+")");
 
 }
 void CalculatorWindow::sumClicked() //! Functional button S
 {
-    if (main_string[main_string.size()-1] != '+' && main_string.size() != 0)
+    if (!currentExpression.empty() && currentExpression.back() != '+') // Проверка на пустоту и последний символ
     {
-        main_string += "+";
+        currentExpression += "+";
         display->setText(display->text()+="+");
     }
-    else{NULL;}
+    // else{NULL;} // Удаляем бессмысленный else
 }
 void CalculatorWindow::subClicked()
 {
-    if (main_string[main_string.size()-1] != '-' && main_string.size() != 0)
+    if (!currentExpression.empty() && currentExpression.back() != '-') // Проверка на пустоту и последний символ
     {
-        main_string += "-";
+        currentExpression += "-";
         display->setText(display->text()+="-");
     }
-    else{NULL;}
+    // else{NULL;}
 }
 void CalculatorWindow::mulClicked()
 {
-    if (main_string[main_string.size()-1] != '*' && main_string.size() != 0)
+    if (!currentExpression.empty() && currentExpression.back() != '*') // Проверка на пустоту и последний символ
     {
-        main_string += "*";
+        currentExpression += "*";
         display->setText(display->text()+="*");
     }
-    else{NULL;}
+    // else{NULL;}
 }
 void CalculatorWindow::divClicked()
 {
-    if (main_string[main_string.size()-1] != '/' && main_string.size() != 0)
+    if (!currentExpression.empty() && currentExpression.back() != '/') // Проверка на пустоту и последний символ
     {
-        main_string += "/";
+        currentExpression += "/";
         display->setText(display->text()+="/");
     }
-    else{NULL;}
+    // else{NULL;}
 }
 
 void CalculatorWindow::clearClicked() //! Functional button E
 { //todo: Добавить некий таймер, за который все еще возможно ничего не делать,
   //todo:чтобы не произошло очистки -- добавить ожидание второго нажатия
     display->setText("");
-    main_string = "";
+    currentExpression = "";
 }
 void CalculatorWindow::oneButtonClicked() //! Numbers button S
 {
-    main_string += "1";
+    currentExpression += "1";
     display->setText(display->text()+= "1");
 }
 void CalculatorWindow::twoButtonClicked()
 {
-    main_string += "2";
+    currentExpression += "2";
     display->setText(display->text()+= "2");
 }
 void CalculatorWindow::threeButtonClicked()
 {
-    main_string += "3";
+    currentExpression += "3";
     display->setText(display->text()+= "3");
 }
 void CalculatorWindow::fourButtonClicked()
 {
-    main_string += "4";
+    currentExpression += "4";
     display->setText(display->text()+= "4");
 }
 void CalculatorWindow::fiveButtonClicked()
 {
-    main_string += "5";
+    currentExpression += "5";
     display->setText(display->text()+= "5");
 }
 void CalculatorWindow::sixButtonClicked()
 {
-    main_string += "6";
+    currentExpression += "6";
     display->setText(display->text()+= "6");
 }
 void CalculatorWindow::sevenButtonClicked()
 {
-    main_string += "7";
+    currentExpression += "7";
     display->setText(display->text()+= "7");
 }
 void CalculatorWindow::eightButtonClicked()
 {
-    main_string += "8";
+    currentExpression += "8";
     display->setText(display->text()+= "8");
 }
 void CalculatorWindow::nineButtonClicked()
 {
-    main_string += "9";
+    currentExpression += "9";
     display->setText(display->text()+= "9");
 }
 void CalculatorWindow::zeroButtonClicked() //! Numbers button E
 {
-    main_string += "0";
+    currentExpression += "0";
     display->setText(display->text()+= "0");
 }
 
 void CalculatorWindow::dotButtonClicked()
 {
-    if (main_string[main_string.size()-1] != '.')
+    // Проверка, что строка не пуста и последний символ не точка
+    // И что в последнем введенном числе еще нет точки
+    if (!currentExpression.empty() && currentExpression.back() != '.')
     {
-        main_string += ".";
-        display->setText(display->text()+=".");
+        size_t last_op = currentExpression.find_last_of("+-*/(");
+        std::string last_num = (last_op == std::string::npos) ? currentExpression :
+                               currentExpression.substr(last_op + 1);
+        if (last_num.find('.') == std::string::npos)
+        {
+            currentExpression += ".";
+            display->setText(display->text()+=".");
+        }
     }
-    else{NULL;}
+    else if (currentExpression.empty()) // Позволяем начать ввод с точки (например, .5)
+    {
+        currentExpression += "0."; // Добавляем 0 для корректности
+        display->setText(display->text()+="0.");
+    }
 }
 
-void CalculatorWindow::equalClicked() //! Equal button
+void CalculatorWindow::equalClicked()
 {
-    if (is_this_balanced(main_string) == false)
-    {
-        QMessageBox::information(nullptr, "Warning!", "The brackets are unbalanced in the provided example, which will lead the program to an error.");
-        // Return from function because of error
-        // This is because the input string is not balanced
-        // i.e. the number of opening and closing brackets do not match
-        // This would cause an error in the calculation of the answer
-        return;
-    }
-    double answer = answer_function(main_string);
-    if (answer == NULL)
-    {
-        display->setText("");
-        main_string = "";
-    }
-    else
-    {
-        display->setText(display->text() + "= "+QString::number(answer));
-        //todo: реализовать анализ нецелых чисел
-        if (std::floor(answer) == answer) // Если ответ целочисленный
+    try {
+        double result = answer_function(currentExpression);
+        if (std::isnan(result))
         {
-            main_string = std::to_string(static_cast<int>(answer));
+            QMessageBox::warning(this, "Error", "Calculation resulted in NaN (e.g., division by zero)");
+            display->setText("Error");
+            currentExpression = "";
+        }
+        else if (std::isinf(result))
+        {
+            QMessageBox::warning(this, "Error", "Calculation resulted in infinity");
+            display->setText("Infinity");
+            currentExpression = "";
         }
         else
         {
-            main_string = std::to_string(answer);
+             // Используем QString::number с 'g' для общей точности и представления
+             QString resultStr = QString::number(result, 'g', 15); // 15 значащих цифр
+             display->setText(resultStr);
+             currentExpression = resultStr.toStdString(); // Обновляем строку выражения результатом
         }
     }
-
-
+    catch (const std::exception& e)
+    {
+        QMessageBox::critical(this, "Error", QString("Calculation error: %1").arg(e.what()));
+        display->setText("Error");
+        currentExpression = "";
+    }
+    catch (...)
+    {
+        QMessageBox::critical(this, "Unknown Error", "An unexpected error occurred during calculation.");
+        display->setText("Error");
+        currentExpression = "";
+    }
 }

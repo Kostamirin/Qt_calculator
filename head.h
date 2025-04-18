@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <stdexcept> // Для std::runtime_error
 
 bool is_this_balanced(std::string main);
 bool is_this_real(std::vector<std::string> cooked); // Добавляем прототип
