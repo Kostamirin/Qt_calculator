@@ -11,8 +11,8 @@
 #include <limits> // For std::numeric_limits
 
 // Инициализация статических констант
-const float arithmetic_progression::UNKNOWN_FLOAT = std::numeric_limits<float>::quiet_NaN();
-const int   arithmetic_progression::UNKNOWN_INT   = std::numeric_limits<int>::min();
+const float UNKNOWN_FLOAT = std::numeric_limits<float>::quiet_NaN();
+const int   UNKNOWN_INT   = std::numeric_limits<int>::min();
 
 arithmetic_progression::arithmetic_progression(QWidget *parent) : QMainWindow(parent) {
     // Create a central widget and set it as the main window's central widget
@@ -196,8 +196,7 @@ inline bool arithmetic_progression::isUnknown(int val) {
 }
 
 // Функция теперь статический член класса и принимает ссылки
-void arithmetic_progression::calculateArithmeticProgression(float &firstTerm, float &step, int &termNumber,
-                                                            float &termValue, float &sumOfTerms)
+void arithmetic_progression::calculateArithmeticProgression(float &firstTerm, float &step, int &termNumber,float &termValue, float &sumOfTerms)
 {
     // --- Начало существующей логики функции calculateArithmeticProgression ---
     // Заменяем qDebug на выброс исключений или возврат кода ошибки,

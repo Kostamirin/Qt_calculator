@@ -18,21 +18,21 @@ class arithmetic_progression : public QMainWindow {
 
 public:
     explicit arithmetic_progression(QWidget *parent = nullptr);
-
-// signals:
-    // void calculationRequested(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
+    ~arithmetic_progression();  // деструктор для очистки элементов пользовательского интерфейса
 
 private slots:
     void calculation_button_clicked();
-    void calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
-    ~arithmetic_progression();  // деструктор для очистки элементов пользовательского интерфейса
+    void calculateArithmeticProgression(float& firstTerm, float& step, int& termNumber, float& termValue, float& sumOfTerms);
+    //void reset_button_clicked(); --не используется на данный момент
 
-    inline bool arithmetic_progression::isUnknown(float val);
-    inline bool arithmetic_progression::isUnknown(int val);
+
+private:
+    // Helper methods
+    inline bool isUnknown(float val);
+    inline bool isUnknown(int val);
 
     // void on_resetButton_clicked();
 
-private:
     QVBoxLayout *mainLayout;
     // UI elements
     QLineEdit *firstInput;
@@ -60,6 +60,6 @@ private:
 };
 
 // Declaration of the standalone function
-float calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
+//float calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
 
 #endif // ARITHMETIC_PROGRESSION_H
