@@ -3,7 +3,8 @@
 #define ARITHMETIC_PROGRESSION_H
 
 #include <QMainWindow> 
-#include <QDebug> 
+#include <QDebug>
+#include <QVBoxLayout>
 
 // Forward declarations if needed, though likely handled by includes
 QT_BEGIN_NAMESPACE
@@ -23,14 +24,16 @@ public:
 
 private slots:
     void calculation_button_clicked();
+    void calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
+    ~arithmetic_progression();  // деструктор для очистки элементов пользовательского интерфейса
+
+    inline bool arithmetic_progression::isUnknown(float val);
+    inline bool arithmetic_progression::isUnknown(int val);
 
     // void on_resetButton_clicked();
 
 private:
-    // Function to calculate arithmetic progression
-    // void calculateArithmeticProgression(); // This was likely a member function placeholder, the free function is separate
-
-
+    QVBoxLayout *mainLayout;
     // UI elements
     QLineEdit *firstInput;
     QLineEdit *differenceInput;
@@ -39,13 +42,21 @@ private:
     QLineEdit *sumInput;
     QLabel *resultLabel;
     QPushButton *calculation_trigger_button;
-    QLabel *firstLabel;
 
-    // QLabel *firstLabel;
-    // ... other labels
-    // QHBoxLayout *firstLayout;
-    // ... other layouts
-    // QVBoxLayout *mainLayout;
+    // UI labels
+    QLabel *firstLabel;
+    QLabel *differenceLabel;
+    QLabel *termsLabel;
+    QLabel *lastTermLabel;
+    QLabel *sumLabel;
+    QWidget *centralWidget;
+
+    // UI layouts
+    QHBoxLayout *firstLayout;
+    QHBoxLayout *differenceLayout;
+    QHBoxLayout *termsLayout;
+    QHBoxLayout *lastTermLayout;
+    QHBoxLayout *sumLayout;
 };
 
 // Declaration of the standalone function

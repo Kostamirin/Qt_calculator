@@ -136,7 +136,6 @@ void arithmetic_progression::calculation_button_clicked()
     lastTermInput->setObjectName("Last Term (a_n)");
     sumInput->setObjectName("Sum of Terms (S_n)");
 
-    // Парсим все поля
     if (!parseFloat(firstInput, a1)) return;
     if (!parseFloat(differenceInput, d)) return;
     if (!parseInt(termsInput, n)) return;
@@ -197,7 +196,8 @@ inline bool arithmetic_progression::isUnknown(int val) {
 }
 
 // Функция теперь статический член класса и принимает ссылки
-void arithmetic_progression::calculateArithmeticProgression(float &firstTerm, float &step, int &termNumber, float &termValue, float &sumOfTerms)
+void arithmetic_progression::calculateArithmeticProgression(float &firstTerm, float &step, int &termNumber,
+                                                            float &termValue, float &sumOfTerms)
 {
     // --- Начало существующей логики функции calculateArithmeticProgression ---
     // Заменяем qDebug на выброс исключений или возврат кода ошибки,
