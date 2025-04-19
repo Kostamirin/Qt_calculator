@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.28)
 project(QT_GUI_project)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -14,12 +14,14 @@ find_package(Qt6 COMPONENTS
   REQUIRED)
 
 add_executable(QT_GUI_project
-        calculatorwindow.cpp
         main.cpp
         Progressions/secondwindow.cpp
         head.cpp
         styles/resources.qrc
         Progressions/arithmetic_progression.cpp
+        calculatorwindow.cpp
+        calculatorwindow.cpp
+        calculatorwindow.cpp
 )
 
 target_link_libraries(QT_GUI_project

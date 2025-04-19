@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLineEdit>
 #include <QPushButton>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -49,5 +50,6 @@ private:
     QLineEdit *display;
     // Add button members later
     // Add calculation logic members later
+    std::string currentExpression; // Замена глобальной переменной
 };
 #endif // CALCULATORWINDOW_H

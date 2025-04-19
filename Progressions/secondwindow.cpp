@@ -1,4 +1,5 @@
 #include "secondwindow.h"
+#include "arithmetic_progression.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -39,11 +40,12 @@ SecondWindow::~SecondWindow()
 
 void SecondWindow::handleArithmeticProgression()
 {
-    arithmeticProgressionWindow *window = new arithmeticProgressionWindow(this);
-    delete this;
-    window->show();
-    window->exec();
-    delete window;
+    arithmetic_progression *window = new arithmetic_progression(this); // Keep 'this' as parent for now
+    // delete this; // DANGEROUS: Do not delete the current window here
+    window->setAttribute(Qt::WA_DeleteOnClose); // Ensure the window is deleted when closed
+    window->show(); // Show the window non-modally
+    //window->exec();
+    //delete window;
 }
 
 void SecondWindow::handleGeometricProgression()

@@ -42,6 +42,7 @@ public:
             //break;
         }
     }
+
     void arithmeticProgression()
     {
         int firstTerm = -1;   // a_1
