@@ -1,4 +1,0 @@
-Cannot generate into /home/kleymuner2131/CLionProjects/Qt_calculator
-It was created with incompatible generator 'Unix Makefiles'
-
-Please either delete it manually or select another generation directory

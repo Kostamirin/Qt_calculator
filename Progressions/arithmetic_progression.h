@@ -2,16 +2,14 @@
 #ifndef ARITHMETIC_PROGRESSION_H
 #define ARITHMETIC_PROGRESSION_H
 
-#include <QMainWindow>
-#include <QDebug>
-#include <limits>
+#include <QMainWindow> 
+#include <QDebug> 
 
+// Forward declarations if needed, though likely handled by includes
 QT_BEGIN_NAMESPACE
 class QLineEdit;
 class QLabel;
 class QPushButton;
-class QHBoxLayout;
-class QVBoxLayout;
 QT_END_NAMESPACE
 
 class arithmetic_progression : public QMainWindow {
@@ -19,42 +17,38 @@ class arithmetic_progression : public QMainWindow {
 
 public:
     explicit arithmetic_progression(QWidget *parent = nullptr);
-    ~arithmetic_progression();
+
+// signals:
+    // void calculationRequested(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
 
 private slots:
     void calculation_button_clicked();
 
+    // void on_resetButton_clicked();
+
 private:
-    static inline bool isUnknown(float val);
-    static inline bool isUnknown(int val);
+    // Function to calculate arithmetic progression
+    // void calculateArithmeticProgression(); // This was likely a member function placeholder, the free function is separate
 
-    static void calculateArithmeticProgression(float &firstTerm, float &step, int &termNumber, float &termValue, float &sumOfTerms);
 
-    static const float UNKNOWN_FLOAT;
-    static const int   UNKNOWN_INT;
-
-    QWidget *centralWidget;
-    QVBoxLayout *mainLayout;
-
+    // UI elements
     QLineEdit *firstInput;
     QLineEdit *differenceInput;
     QLineEdit *termsInput;
     QLineEdit *lastTermInput;
     QLineEdit *sumInput;
-
-    QLabel *firstLabel;
-    QLabel *differenceLabel;
-    QLabel *termsLabel;
-    QLabel *lastTermLabel;
-    QLabel *sumLabel;
-
+    QLabel *resultLabel;
     QPushButton *calculation_trigger_button;
+    QLabel *firstLabel;
 
-    QHBoxLayout *firstLayout;
-    QHBoxLayout *differenceLayout;
-    QHBoxLayout *termsLayout;
-    QHBoxLayout *lastTermLayout;
-    QHBoxLayout *sumLayout;
+    // QLabel *firstLabel;
+    // ... other labels
+    // QHBoxLayout *firstLayout;
+    // ... other layouts
+    // QVBoxLayout *mainLayout;
 };
+
+// Declaration of the standalone function
+float calculateArithmeticProgression(float firstTerm, float step, int termNumber, float termValue, float sumOfTerms);
 
 #endif // ARITHMETIC_PROGRESSION_H

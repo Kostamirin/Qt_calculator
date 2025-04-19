@@ -1,6 +1,4 @@
 // Created by kleymuner2131 on 14.04.25.
-//#include <QApplication> // Needed only if using QApplication:: stuff directly, often only needed in main.cpp
-// #include <QWindow> // Not directly needed here
 #include "arithmetic_progression.h"
 #include <QWidget>
 #include <QVBoxLayout>
