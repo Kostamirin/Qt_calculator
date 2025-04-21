@@ -1,5 +1,6 @@
 #include "secondwindow.h"
 #include "arithmetic_progression.h"
+#include "geometric_progression.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -44,16 +45,13 @@ void SecondWindow::handleArithmeticProgression()
     // delete this; // DANGEROUS: Do not delete the current window here
     window->setAttribute(Qt::WA_DeleteOnClose); // Ensure the window is deleted when closed
     window->show(); // Show the window non-modally
-    //window->exec();
-    //delete window;
 }
 
 void SecondWindow::handleGeometricProgression()
 {
-    qDebug() << "Geometric Progression clicked (Placeholder)";
-    // TODO: Implement Geometric Progression functionality or window
-    QMessageBox::information(this, "WIP", "Geometric Progression - Not Implemented Yet");
-    // accept();
+    geometric_progression *window = new arithmetic_progression(this);
+    window->setAttribute(Qt::WA_DeleteOnClose);
+    window->show();
 }
 
 void SecondWindow::handleHelp()
