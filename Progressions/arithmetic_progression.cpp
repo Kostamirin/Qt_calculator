@@ -1,4 +1,4 @@
-// Created by kleymuner2131 on 14.04.25.
+    // Created by kleymuner2131 on 14.04.25.
 #include "arithmetic_progression.h"
 #include <QWidget>
 #include <QVBoxLayout>
@@ -459,5 +459,4 @@ void arithmetic_progression::calculateArithmeticProgression(float &firstTerm, fl
          qDebug() << "Warning: Calculation stopped after maximum iterations.";
      }
 
-    // --- Конец существующей логики --- 
 }
