@@ -22,6 +22,7 @@ add_executable(QT_GUI_project
         calculatorwindow.cpp
         calculatorwindow.cpp
         calculatorwindow.cpp
+        Progressions/geometric_progression.cpp
 )
 
 target_link_libraries(QT_GUI_project

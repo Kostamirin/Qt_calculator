@@ -25,7 +25,6 @@ private slots:
     void calculateArithmeticProgression(float& firstTerm, float& step, int& termNumber, float& termValue, float& sumOfTerms);
     //void reset_button_clicked(); --не используется на данный момент
 
-
 private:
     // Helper methods
     inline bool isUnknown(float val);

@@ -1,5 +1,6 @@
 #include "secondwindow.h"
 #include "arithmetic_progression.h"
+#include "geometric_progression.h"
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QMessageBox>
@@ -44,24 +45,23 @@ void SecondWindow::handleArithmeticProgression()
     // delete this; // DANGEROUS: Do not delete the current window here
     window->setAttribute(Qt::WA_DeleteOnClose); // Ensure the window is deleted when closed
     window->show(); // Show the window non-modally
-    //window->exec();
-    //delete window;
 }
 
 void SecondWindow::handleGeometricProgression()
 {
-    qDebug() << "Geometric Progression clicked (Placeholder)";
-    // TODO: Implement Geometric Progression functionality or window
-    QMessageBox::information(this, "WIP", "Geometric Progression - Not Implemented Yet");
-    // accept();
+    geometric_progression *window = new geometric_progression(this);
+    window->setAttribute(Qt::WA_DeleteOnClose);
+    window->show();
 }
 
 void SecondWindow::handleHelp()
 {
     qDebug() << "Help clicked";
     // Show a simple help message box
-    QMessageBox::information(this, "Help", "This is the secondary menu.\n1. Arithmetic Progression: (Not Implemented)\n2. Geometric Progression: (Not Implemented)\n3. Help: Shows this message.\n4. Exit: Returns to the main calculator.");
+    QMessageBox::information(this, "Help", "This is the secondary menu.\n1. Arithmetic Progression: Calculate values for arithmetic progressions.\n2. Geometric Progression: Calculate values for geometric progressions.\n3. Help: Shows this message.\n4. Exit: Returns to the main calculator.");
     // Do not close the dialog after showing help
 }
 
 // No separate handleExit needed as we connected the button directly to accept()
+
+
