@@ -77,12 +77,6 @@ arithmetic_progression::~arithmetic_progression()
     // ... и т.д.
 }
 
-
-
-// Define sentinel values for unknown inputs - Перенесено в .h как статические константы
-//const float UNKNOWN_FLOAT = std::numeric_limits<float>::quiet_NaN();
-//const int   UNKNOWN_INT   = std::numeric_limits<int>::min();
-
 void arithmetic_progression::calculation_button_clicked()
 {
     // Read and process each input: if empty, treat as unknown; otherwise, convert.

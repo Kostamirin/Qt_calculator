@@ -10,22 +10,29 @@
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QPushButton>
+#include <QVBoxLayout>
+#include <limits>
+#include <cmath>
 
 class geometric_progression : public QMainWindow {
-    QOBJECT_H
+    Q_OBJECT
 
 public:
     explicit geometric_progression(QWidget *parent = nullptr);
     ~geometric_progression();
 
     const float UNKNOWN_FLOAT = std::numeric_limits<float>::quiet_NaN();
-    const int   UNKNOWN_INT   = std::numeric_limits<int>::quiet_NaN();
+    const int   UNKNOWN_INT   = std::numeric_limits<int>::min();
 
 private slots:
     void calculation_button_clicked();
-    void calculate(float &firstTerm, float &difference, int &termNumber, float &lastTerm, float& sum);
+    void calculate(float &firstTerm, float &ratio, int &termNumber, float &lastTerm, float& sum);
 
 private:
+    // Helper methods
+    inline bool isUnknown(float val) { return std::isnan(val); }
+    inline bool isUnknown(int val) { return val == UNKNOWN_INT; }
+
     QWidget *centralWidget;
     // UI elements
     QVBoxLayout *mainLayout;
@@ -33,9 +40,9 @@ private:
     QLabel *firstLabel;
     QLineEdit *firstInput;
 
-    QHBoxLayout *differenceLayout;
-    QLabel *differenceLabel;
-    QLineEdit *differenceInput;
+    QHBoxLayout *ratioLayout;
+    QLabel *ratioLabel;
+    QLineEdit *ratioInput;
 
     QHBoxLayout *termsLayout;
     QLabel *termsLabel;
@@ -55,3 +62,4 @@ private:
 
 
 #endif //GEOMETRIC_PROGRESSION_H
+

@@ -13,7 +13,7 @@ public:
     {
         std::cout
         << "1. Arithmetic progression\n"
-        << "2. Geometric progression (not implemented yet)\n"
+        << "2. Geometric progression\n"
         << "3. Instructions\n"
         << "4. Exit\n\n";
 
@@ -27,8 +27,7 @@ public:
             arithmeticProgression();
             break;
         case 2:
-            std::cout << "Geometric progression is not implemented yet.\n";
-            menu();
+            geometricProgression();
             break;
         case 3:
             instructions();
@@ -115,6 +114,64 @@ public:
         menu();
     }
 
+    void geometricProgression()
+    {
+        float firstTerm = -1;   // b_1
+        float ratio = -1;       // Common ratio q
+        int termNumber = -1;    // Term number n
+        float termValue = -1;   // Value of n-th term b_n
+        float sumOfTerms = -1;  // Sum of first n terms S_n
+
+        std::cout << "Enter known values (if unknown, enter -1):\n";
+        std::cout << "First term (b_1): ";
+        std::cin >> firstTerm;
+        std::cout << "Common ratio (q): ";
+        std::cin >> ratio;
+        std::cout << "Term number (n): ";
+        std::cin >> termNumber;
+        std::cout << "Value of n-th term (b_n): ";
+        std::cin >> termValue;
+        std::cout << "Sum of first n terms (S_n): ";
+        std::cin >> sumOfTerms;
+
+        // Case 1: Calculate b_n if b_1, q, and n are known
+        if (firstTerm != -1 && ratio != -1 && termNumber != -1 && termValue == -1)
+        {
+            termValue = firstTerm * std::pow(ratio, termNumber - 1);
+            std::cout << "Value of " << termNumber << "-th term (b_" << termNumber << "): " << termValue << "\n";
+        }
+        // Case 2: Calculate b_1 if b_n, q, and n are known
+        else if (termValue != -1 && ratio != -1 && termNumber != -1 && firstTerm == -1)
+        {
+            firstTerm = termValue / std::pow(ratio, termNumber - 1);
+            std::cout << "First term (b_1): " << firstTerm << "\n";
+        }
+        // Case 3: Calculate q if b_1, b_n, and n are known
+        else if (firstTerm != -1 && termValue != -1 && termNumber != -1 && ratio == -1)
+        {
+            ratio = std::pow(termValue / firstTerm, 1.0 / (termNumber - 1));
+            std::cout << "Common ratio (q): " << ratio << "\n";
+        }
+        // Case 4: Calculate S_n if b_1, q, and n are known
+        else if (firstTerm != -1 && ratio != -1 && termNumber != -1 && sumOfTerms == -1)
+        {
+            if (std::abs(ratio - 1.0) < 1e-10) {
+                // Sum = n * b₁ when q = 1
+                sumOfTerms = termNumber * firstTerm;
+            } else {
+                // Sum = b₁ * (1 - q^n) / (1 - q)
+                sumOfTerms = firstTerm * (1 - std::pow(ratio, termNumber)) / (1 - ratio);
+            }
+            std::cout << "Sum of first " << termNumber << " terms (S_" << termNumber << "): " << sumOfTerms << "\n";
+        }
+        else
+        {
+            std::cout << "Error: Not enough data or unsupported calculation case.\n";
+        }
+
+        std::cout << "\nReturning to menu...\n";
+        menu();
+    }
     void instructions()
     {
         std::cout
@@ -124,16 +181,17 @@ public:
         <<"S_n = n(a_1+a_n)/2\n\n";
         std::cin.get();std::cout
         <<"Формула геометрической прогрессии:\n"
-        <<"a_n = a_1 * r^n\n"
-        <<"S_n = (a_1/r)^n\n\n";
+        <<"b_n = b_1 * q^(n-1)\n"
+        <<"S_n = b_1 * (1 - q^n) / (1 - q), при q ≠ 1\n"
+        <<"S_n = n * b_1, при q = 1\n\n";
         std::cin.get();std::cout
         <<"Определения:\n"
-        <<"a_1 - первый член прогрессии\n"
+        <<"a_1, b_1 - первый член прогрессии\n"
         <<"n - порядкомый номер члена/суммы членов прогрессии\n"
-        <<"a_n - n-ый член прогрессии\n"
+        <<"a_n, b_n - n-ый член прогрессии\n"
         <<"S_n - сумма n-ых членов прогрессии\n"
-        <<"d - добавление (арифметическая прогрессия)\n"
-        <<"r - умножение (геометрическая прогрессия)\n\n";
+        <<"d - разность (арифметическая прогрессия)\n"
+        <<"q - знаменатель (геометрическая прогрессия)\n\n";
         std::cin.get();std::cout
         <<"Пример задачи(арф):\n"
         <<"Бригада маляров красит забор длиной 240 метров, ежедневно увеличивая норму покраски на одно и то же число метров.\n"
@@ -154,3 +212,7 @@ public:
 };
 
 #endif // ARITHMETIC_AND_GEOMETRIC_PROGRESSION_H
+
+
+
+
