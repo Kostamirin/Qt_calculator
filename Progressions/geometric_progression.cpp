@@ -167,6 +167,7 @@ void geometric_progression::calculation_button_clicked()
     } else if (unknown_count_after == 0) {
         QMessageBox::information(this, "Calculation Complete", "All values calculated successfully.");
     }
+}
 
 void geometric_progression::calculate(float &firstTerm, float &ratio, int &termNumber, float &lastTerm, float& sum)
 {
@@ -404,3 +405,4 @@ void geometric_progression::calculate(float &firstTerm, float &ratio, int &termN
         qDebug() << "Warning: Calculation stopped after maximum iterations.";
     }
 }
+
