@@ -1,0 +1,23 @@
+{
+	"BUILD_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build/QT_GUI_project_autogen",
+	"CMAKE_BINARY_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator",
+	"CMAKE_SOURCE_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build/QT_GUI_project_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/kleymuner2131/VScodeProjects/Qt_calculator/styles/calculator.qss"
+	],
+	"LOCK_FILE" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build/CMakeFiles/QT_GUI_project_autogen.dir/AutoRcc_resources_NHPNRXPXNK_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "NHPNRXPXNK",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/build/CMakeFiles/QT_GUI_project_autogen.dir/AutoRcc_resources_NHPNRXPXNK_Used.txt",
+	"SOURCE" : "/home/kleymuner2131/VScodeProjects/Qt_calculator/styles/resources.qrc",
+	"VERBOSITY" : 0
+}
