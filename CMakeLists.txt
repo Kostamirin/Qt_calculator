@@ -17,12 +17,11 @@ find_package(Qt6 COMPONENTS
 add_executable(QT_GUI_project
         main.cpp
         Progressions/secondwindow.cpp
-        head.cpp
+        ProgramFiles/head.cpp
         styles/resources.qrc
         Progressions/arithmetic_progression.cpp
-        calculatorwindow.cpp
-        calculatorwindow.cpp
-        calculatorwindow.cpp
+        ProgramFiles/calculatorwindow.cpp
+        ProgramFiles/calculatorwindow.cpp
         Progressions/geometric_progression.cpp
 )
 
