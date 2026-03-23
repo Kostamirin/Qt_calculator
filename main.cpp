@@ -2,20 +2,23 @@
 #include <QApplication>
 #include <QFile>
 
+
 int main(int argc, char *argv[])
 {
     // Create the application object
-    QApplication a(argc, argv);
+    QApplication mainApp(argc, argv);
 
     // Load and apply styles from the QSS file
-    QFile styleFile(":/calculator.qss");
-    if (!styleFile.open(QFile::ReadOnly)) {
-        // Log a warning if the style file cannot be opened
+    QFile styleFile("main.ui");
+    if (!styleFile.open(QFile::ReadOnly))
+    {
         qWarning("Cannot open style file");
-    } else {
+    }
+    else
+    {
         // Apply the stylesheet to the application
         QString styleSheet = QString::fromUtf8(styleFile.readAll());
-        a.setStyleSheet(styleSheet);
+        mainApp.setStyleSheet(styleSheet);
         styleFile.close();
     }
 
@@ -24,5 +27,5 @@ int main(int argc, char *argv[])
     w.show();
 
     // Execute the application event loop
-    return a.exec();
+    return mainApp.exec();
 }
