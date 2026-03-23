@@ -1,4 +1,3 @@
-#include "ProgramFiles/calculatorwindow.h"
 #include <QApplication>
 #include <QFile>
 
@@ -22,10 +21,5 @@ int main(int argc, char *argv[])
         styleFile.close();
     }
 
-    // Create and display the main calculator window
-    CalculatorWindow w;
-    w.show();
-
-    // Execute the application event loop
     return mainApp.exec();
 }
