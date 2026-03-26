@@ -18,11 +18,10 @@ add_executable(QT_GUI_project
         main.cpp
         Progressions/secondwindow.cpp
         ProgramFiles/head.cpp
-        styles/resources.qrc
         Progressions/arithmetic_progression.cpp
-        ProgramFiles/calculatorwindow.cpp
-        ProgramFiles/calculatorwindow.cpp
         Progressions/geometric_progression.cpp
+        mainWindow.cpp
+        mainWindow.h
 )
 
 target_link_libraries(QT_GUI_project

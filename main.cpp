@@ -1,5 +1,7 @@
 #include <QApplication>
 #include <QFile>
+#include <QPushButton>
+#include "mainWindow.h"
 
 
 int main(int argc, char *argv[])
@@ -20,6 +22,7 @@ int main(int argc, char *argv[])
         mainApp.setStyleSheet(styleSheet);
         styleFile.close();
     }
+
 
     return mainApp.exec();
 }
