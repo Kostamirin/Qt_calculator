@@ -6,6 +6,8 @@
 #define QT_GUI_PROJECT_MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QLineEdit>
 
 namespace Ui { class mainWindow; }
 
@@ -22,9 +24,29 @@ private slots:
     // ...
 
 private:
+
+    void ini_buttons();
+    void ini_fuctional();
+
     Ui::mainWindow *ui; // Указатель на UI
 
+    // Указатели на кнопки (инициализируются в конструкторе)
+    QPushButton * button_1;
+    QPushButton * button_2;
+    QPushButton * button_3;
+    QPushButton * button_4;
+    QPushButton * button_5;
+    QPushButton * button_6;
+    QPushButton * button_7;
+    QPushButton * button_8;
+    QPushButton * button_9;
+    QPushButton * button_0;
+    QPushButton * button_dot;
+    QPushButton * button_percent;
+
+    QLineEdit * display;  // Дисплей калькулятора
 };
+
 
 
 #endif //QT_GUI_PROJECT_MAINWINDOW_H

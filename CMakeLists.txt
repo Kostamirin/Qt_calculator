@@ -22,6 +22,8 @@ add_executable(QT_GUI_project
         Progressions/geometric_progression.cpp
         mainWindow.cpp
         mainWindow.h
+        Functions/functions.cpp
+        Functions/functions.h
 )
 
 target_link_libraries(QT_GUI_project
