@@ -21,7 +21,7 @@ public:
 private slots:
     void num1Pressed();
     void num2Pressed();
-    // ...
+
 
 private:
 

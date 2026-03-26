@@ -27,6 +27,7 @@ void mainWindow::ini_buttons()
     button_0 = ui->pushButton_0;
     button_dot = ui->pushButton_dot;
     button_percent = ui->pushButton_percent;
+
     display = ui->lineEdit;
 }
 
