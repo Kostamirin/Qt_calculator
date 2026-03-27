@@ -2,6 +2,7 @@
 
 #include "mainWindow.h"
 #include "ui_mainwindow.h"
+#include "ProgramFiles/head.h"
 // #include "main.ui"
 
 
@@ -89,6 +90,10 @@ void mainWindow::plusPressed() {}
 void mainWindow::minusPressed() {}
 void mainWindow::multiplyPressed() {}
 void mainWindow::dividePressed() {}
-void mainWindow::equalsPressed() {}
+void mainWindow::equalsPressed()
+{
+    main_string = display->text().toStdString();
+    answer_function(main_string);
+}
 void mainWindow::clearPressed() { display->clear(); }
 void mainWindow::clearallPressed() { display->clear(); }

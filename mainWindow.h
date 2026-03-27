@@ -8,6 +8,8 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QString>
+
 
 namespace Ui { class mainWindow; }
 
@@ -18,6 +20,8 @@ public:
 
     mainWindow(QWidget *parent = nullptr);
     ~mainWindow();
+
+    std::string main_string = ""; //The main string of all stuf
 
 private slots:
 
@@ -73,7 +77,7 @@ private:
     QPushButton * button_clear;
     QPushButton * button_clearall;
 
-    QLineEdit * display;  // Дисплей калькулятора
+    QLineEdit * display;  //  Осеовная панель
 };
 
 
