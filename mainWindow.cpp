@@ -2,6 +2,9 @@
 
 #include "mainWindow.h"
 #include "ui_mainwindow.h"
+// #include "main.ui"
+
+
 
 mainWindow::mainWindow (QWidget *parent) :
     QMainWindow(parent), ui(new Ui::mainWindow)
@@ -9,6 +12,11 @@ mainWindow::mainWindow (QWidget *parent) :
     ui->setupUi(this);
     ini_buttons();
     ini_fuctional();
+}
+
+mainWindow::~mainWindow()
+{
+    return;
 }
 
 
@@ -34,7 +42,37 @@ void mainWindow::ini_buttons()
 void mainWindow::ini_fuctional()
 {
     // Подключение ФУНКЦИОНАЛА к кнопкам
+    connect(button_0, &QPushButton::clicked, this, &mainWindow::num0Pressed);
     connect(button_1, &QPushButton::clicked, this, &mainWindow::num1Pressed);
     connect(button_2, &QPushButton::clicked, this, &mainWindow::num2Pressed);
     connect(button_3, &QPushButton::clicked, this, &mainWindow::num3Pressed);
+    connect(button_4, &QPushButton::clicked, this, &mainWindow::num4Pressed);
+    connect(button_5, &QPushButton::clicked, this, &mainWindow::num5Pressed);
+    connect(button_6, &QPushButton::clicked, this, &mainWindow::num6Pressed);
+    connect(button_7, &QPushButton::clicked, this, &mainWindow::num7Pressed);
+    connect(button_8, &QPushButton::clicked, this, &mainWindow::num8Pressed);
+    connect(button_9, &QPushButton::clicked, this, &mainWindow::num9Pressed);
+
+    connect(button_dot, &QPushButton::clicked, this, &mainWindow::dotPressed);
+    connect(button_percent, &QPushButton::clicked, this, &mainWindow::percentPressed);
 }
+
+void mainWindow::num0Pressed() { display->setText(display->text() + "0"); }
+void mainWindow::num1Pressed() { display->setText(display->text() + "1"); }
+void mainWindow::num2Pressed() { display->setText(display->text() + "2"); }
+void mainWindow::num3Pressed() { display->setText(display->text() + "3"); }
+void mainWindow::num4Pressed() { display->setText(display->text() + "4"); }
+void mainWindow::num5Pressed() { display->setText(display->text() + "5"); }
+void mainWindow::num6Pressed() { display->setText(display->text() + "6"); }
+void mainWindow::num7Pressed() { display->setText(display->text() + "7"); }
+void mainWindow::num8Pressed() { display->setText(display->text() + "8"); }
+void mainWindow::num9Pressed() { display->setText(display->text() + "9"); }
+
+void mainWindow::dotPressed() { display->setText(display->text() + "."); }
+void mainWindow::percentPressed() { /* Implement percent logic */ }
+void mainWindow::plusPressed() {}
+void mainWindow::minusPressed() {}
+void mainWindow::multiplyPressed() {}
+void mainWindow::dividePressed() {}
+void mainWindow::equalsPressed() {}
+void mainWindow::clearPressed() { display->clear(); }
