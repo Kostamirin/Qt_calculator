@@ -15,12 +15,33 @@ class mainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
+
     mainWindow(QWidget *parent = nullptr);
     ~mainWindow();
 
 private slots:
+
+    // Numbers
+    void num0Pressed();
     void num1Pressed();
     void num2Pressed();
+    void num3Pressed();
+    void num4Pressed();
+    void num5Pressed();
+    void num6Pressed();
+    void num7Pressed();
+    void num8Pressed();
+    void num9Pressed();
+
+    // Characters
+    void dotPressed();
+    void percentPressed();
+    void plusPressed();
+    void minusPressed();
+    void multiplyPressed();
+    void dividePressed();
+    void equalsPressed();
+    void clearPressed();
 
 
 private:

@@ -36,5 +36,5 @@ void mainWindow::ini_fuctional()
     // Подключение ФУНКЦИОНАЛА к кнопкам
     connect(button_1, &QPushButton::clicked, this, &mainWindow::num1Pressed);
     connect(button_2, &QPushButton::clicked, this, &mainWindow::num2Pressed);
-
+    connect(button_3, &QPushButton::clicked, this, &mainWindow::num3Pressed);
 }
