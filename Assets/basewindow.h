@@ -8,9 +8,25 @@
 #include <QMainWindow>
 
 
+QT_BEGIN_NAMESPACE
+
+namespace Ui
+{
+    class baseWindow;
+}
+
+QT_END_NAMESPACE
+
 class baseWindow : public QMainWindow
 {
+    Q_OBJECT
 
+public:
+    explicit baseWindow(QWidget* parent = nullptr);
+    ~baseWindow() override;
+
+private:
+    Ui::baseWindow* ui;
 };
 
 
