@@ -42,6 +42,7 @@ private slots:
     void dividePressed();
     void equalsPressed();
     void clearPressed();
+    void clearallPressed();
 
 
 private:
@@ -64,6 +65,13 @@ private:
     QPushButton * button_0;
     QPushButton * button_dot;
     QPushButton * button_percent;
+    QPushButton * button_plus;
+    QPushButton * button_minus;
+    QPushButton * button_multiply;
+    QPushButton * button_divide;
+    QPushButton * button_equals;
+    QPushButton * button_clear;
+    QPushButton * button_clearall;
 
     QLineEdit * display;  // Дисплей калькулятора
 };

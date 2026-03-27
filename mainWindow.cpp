@@ -36,12 +36,20 @@ void mainWindow::ini_buttons()
     button_dot = ui->pushButton_dot;
     button_percent = ui->pushButton_percent;
 
+    // Добавленны позже
+    button_plus = ui->pushButton_plus;
+    button_minus = ui->pushButton_minus;
+    button_multiply = ui->pushButton_multiply;
+    button_divide = ui->pushButton_divide;
+    button_equals = ui->pushButton_equals;
+    button_clear = ui->pushButton_clear;
+
     display = ui->lineEdit;
 }
 
 void mainWindow::ini_fuctional()
 {
-    // Подключение ФУНКЦИОНАЛА к кнопкам
+    // Подключение ФУНКЦИОНАЛА к    -- числам
     connect(button_0, &QPushButton::clicked, this, &mainWindow::num0Pressed);
     connect(button_1, &QPushButton::clicked, this, &mainWindow::num1Pressed);
     connect(button_2, &QPushButton::clicked, this, &mainWindow::num2Pressed);
@@ -53,8 +61,15 @@ void mainWindow::ini_fuctional()
     connect(button_8, &QPushButton::clicked, this, &mainWindow::num8Pressed);
     connect(button_9, &QPushButton::clicked, this, &mainWindow::num9Pressed);
 
+    // Подключение функционала к     -- символам
     connect(button_dot, &QPushButton::clicked, this, &mainWindow::dotPressed);
     connect(button_percent, &QPushButton::clicked, this, &mainWindow::percentPressed);
+    connect(button_plus, &QPushButton::clicked, this, &mainWindow::plusPressed);
+    connect(button_minus, &QPushButton::clicked, this, &mainWindow::minusPressed);
+    connect(button_multiply, &QPushButton::clicked, this, &mainWindow::multiplyPressed);
+    connect(button_divide, &QPushButton::clicked, this, &mainWindow::dividePressed);
+    connect(button_equals, &QPushButton::clicked, this, &mainWindow::equalsPressed);
+    connect(button_clear, &QPushButton::clicked, this, &mainWindow::clearPressed);
 }
 
 void mainWindow::num0Pressed() { display->setText(display->text() + "0"); }
@@ -69,10 +84,11 @@ void mainWindow::num8Pressed() { display->setText(display->text() + "8"); }
 void mainWindow::num9Pressed() { display->setText(display->text() + "9"); }
 
 void mainWindow::dotPressed() { display->setText(display->text() + "."); }
-void mainWindow::percentPressed() { /* Implement percent logic */ }
+void mainWindow::percentPressed() { display->setText(display->text() + "%"); }
 void mainWindow::plusPressed() {}
 void mainWindow::minusPressed() {}
 void mainWindow::multiplyPressed() {}
 void mainWindow::dividePressed() {}
 void mainWindow::equalsPressed() {}
 void mainWindow::clearPressed() { display->clear(); }
+void mainWindow::clearallPressed() { display->clear(); }
