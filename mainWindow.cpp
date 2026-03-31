@@ -5,6 +5,7 @@
 #include "ProgramFiles/head.h"
 // #include "main.ui"
 
+head head;
 
 
 mainWindow::mainWindow (QWidget *parent) :
@@ -93,7 +94,7 @@ void mainWindow::dividePressed() {}
 void mainWindow::equalsPressed()
 {
     main_string = display->text().toStdString();
-    answer_function(main_string);
+    head.answer_function(main_string);
 }
 void mainWindow::clearPressed() { display->clear(); }
 void mainWindow::clearallPressed() { display->clear(); }
