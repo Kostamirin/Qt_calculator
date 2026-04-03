@@ -43,8 +43,9 @@ void mainWindow::ini_buttons()
     button_minus = ui->pushButton_minus;
     button_multiply = ui->pushButton_multiply;
     button_divide = ui->pushButton_divide;
-    button_equals = ui->pushButton_equals;
+    button_equals = ui->pushButton_equal;
     button_clear = ui->pushButton_clear;
+    button_clearall = ui->pushButton_clearall;
 
     display = ui->lineEdit;
 }
@@ -87,14 +88,34 @@ void mainWindow::num9Pressed() { display->setText(display->text() + "9"); }
 
 void mainWindow::dotPressed() { display->setText(display->text() + "."); }
 void mainWindow::percentPressed() { display->setText(display->text() + "%"); }
-void mainWindow::plusPressed() {}
-void mainWindow::minusPressed() {}
-void mainWindow::multiplyPressed() {}
-void mainWindow::dividePressed() {}
+void mainWindow::plusPressed() { display->setText(display->text() + "+"); }
+void mainWindow::minusPressed() {display->setText(display->text() + "-"); }
+void mainWindow::multiplyPressed() {display->setText(display->text() + "*"); }
+void mainWindow::dividePressed() {display->setText(display->text() + "/"); }
+
+void mainWindow::clearPressed() 
+{
+     if (!this->main_string.empty())
+     {
+        main_string.pop_back();
+     }
+     else
+     {
+        // nothing
+     }
+     //display text anyway
+     display->setText(QString::fromStdString(this->main_string));
+}
+
+void mainWindow::clearallPressed() 
+{
+     display->clear();
+     this->history.push_back(this->main_string);
+     this->main_string = "" ;
+}
+
 void mainWindow::equalsPressed()
 {
     main_string = display->text().toStdString();
-    head.answer_function(main_string);
+    display->setText(QString::fromStdString(std::to_string(head.answer_function(main_string))));
 }
-void mainWindow::clearPressed() { display->clear(); }
-void mainWindow::clearallPressed() { display->clear(); }

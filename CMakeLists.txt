@@ -24,9 +24,9 @@ add_executable(QT_GUI_project
         mainWindow.h
         Functions/functions.cpp
         Functions/functions.h
-        Assets/basewindow.cpp
-        Assets/basewindow.h
-        Assets/basewindow.ui
+        #Assets/basewindow.cpp
+        #Assets/basewindow.h
+        #Assets/basewindow.ui
 )
 
 target_link_libraries(QT_GUI_project

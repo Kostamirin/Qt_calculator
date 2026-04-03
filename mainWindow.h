@@ -22,6 +22,7 @@ public:
     ~mainWindow();
 
     std::string main_string = ""; //The main string of all stuf
+    std::vector<std::string> history;
 
 private slots:
 
