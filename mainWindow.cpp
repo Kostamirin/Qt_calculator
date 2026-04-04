@@ -21,7 +21,7 @@ mainWindow::~mainWindow()
     return;
 }
 
-
+// todo create some engineer buttons
 void mainWindow::ini_buttons()
 {
     // Связываем удобные имена с объектами из .ui файла
@@ -73,6 +73,7 @@ void mainWindow::ini_fuctional()
     connect(button_divide, &QPushButton::clicked, this, &mainWindow::dividePressed);
     connect(button_equals, &QPushButton::clicked, this, &mainWindow::equalsPressed);
     connect(button_clear, &QPushButton::clicked, this, &mainWindow::clearPressed);
+    connect(button_clearall, &QPushButton::clicked, this, &mainWindow::clearallPressed);
 }
 
 void mainWindow::num0Pressed() { display->setText(display->text() + "0"); }
@@ -95,9 +96,10 @@ void mainWindow::dividePressed() {display->setText(display->text() + "/"); }
 
 void mainWindow::clearPressed() 
 {
+    main_string = display->text().toStdString();
      if (!this->main_string.empty())
      {
-        main_string.pop_back();
+         main_string.pop_back();
      }
      else
      {
