@@ -21,7 +21,6 @@ mainWindow::~mainWindow()
     return;
 }
 
-// todo create some engineer buttons
 void mainWindow::ini_buttons()
 {
     // Связываем удобные имена с объектами из .ui файла
