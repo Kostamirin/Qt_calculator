@@ -135,3 +135,8 @@ void mainWindow::menu_simple_pressed()
     // Пока функционал лишь такой
     this->hide();
 }
+
+void mainWindow::menu_engineer_pressed()
+{
+    return;
+}
