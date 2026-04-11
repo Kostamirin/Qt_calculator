@@ -47,6 +47,10 @@ void mainWindow::ini_buttons()
     button_clearall = ui->pushButton_clearall;
 
     display = ui->lineEdit;
+
+    // menu buttons
+    menu_simple = ui->actionSimple;
+    menu_engineer = ui->actionEngineer;
 }
 
 void mainWindow::ini_fuctional()

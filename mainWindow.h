@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLineEdit>
+#include <QAction>
 #include <QString>
 
 
@@ -79,6 +80,9 @@ private:
     QPushButton * button_clearall;
 
     QLineEdit * display;  //  Осеовная панель
+
+    QAction * menu_simple;
+    QAction * menu_engineer;
 };
 
 
