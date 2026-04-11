@@ -307,10 +307,43 @@
     <property name="title">
      <string>Type</string>
     </property>
+    <addaction name="actionSimple"/>
+    <addaction name="actionEngineer"/>
+    <addaction name="actionMoney_convert"/>
    </widget>
    <addaction name="menuType"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSimple">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Simple</string>
+   </property>
+  </action>
+  <action name="actionEngineer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Engineer</string>
+   </property>
+  </action>
+  <action name="actionMoney_convert">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Money convert</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
