@@ -77,6 +77,10 @@ void mainWindow::ini_fuctional()
     connect(button_equals, &QPushButton::clicked, this, &mainWindow::equalsPressed);
     connect(button_clear, &QPushButton::clicked, this, &mainWindow::clearPressed);
     connect(button_clearall, &QPushButton::clicked, this, &mainWindow::clearallPressed);
+
+    // Menu buttons
+    connect(menu_simple, &QAction::triggered, this, &mainWindow::menu_simple_pressed);
+    connect(menu_engineer, &QAction::triggered, this, &mainWindow::menu_engineer_pressed);
 }
 
 void mainWindow::num0Pressed() { display->setText(display->text() + "0"); }

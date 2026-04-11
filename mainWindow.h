@@ -50,6 +50,9 @@ private slots:
     void clearPressed();
     void clearallPressed();
 
+    // Menu
+    void menu_simple_pressed();
+    void menu_engineer_pressed();
 
 private:
 
