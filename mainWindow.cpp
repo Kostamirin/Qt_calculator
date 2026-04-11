@@ -3,6 +3,7 @@
 #include "mainWindow.h"
 #include "ui_mainwindow.h"
 #include "ProgramFiles/head.h"
+#include "Progressions/secondwindow.h"
 // #include "main.ui"
 
 head head;
@@ -127,4 +128,10 @@ void mainWindow::equalsPressed()
 {
     main_string = display->text().toStdString();
     display->setText(QString::fromStdString(std::to_string(head.answer_function(main_string))));
+}
+
+void mainWindow::menu_simple_pressed()
+{
+    // Пока функционал лишь такой
+    this->hide();
 }
