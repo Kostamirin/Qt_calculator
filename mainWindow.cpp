@@ -133,7 +133,8 @@ void mainWindow::equalsPressed()
 void mainWindow::menu_simple_pressed()
 {
     // Пока функционал лишь такой
-    this->hide();
+    // todo Выключать отмеченные галочкой значения в процессах, связанный с изменением типа калькулятора
+    this->showMinimized();
 }
 
 void mainWindow::menu_engineer_pressed()
