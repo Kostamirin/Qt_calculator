@@ -1,4 +1,5 @@
 // Created by kleymuner2131 on 12.04.25.
+#include "head.h"
 #include <string>
 #include <vector>
 #include <stdexcept> // Для исключений
@@ -6,7 +7,7 @@
 #include <limits>  // Для std::numeric_limits
 #include <cmath>   // Для std::isnan
 
-bool is_this_balanced(std::string main)
+bool head::is_this_balanced(std::string main)
 {
     int balance = 0;
     for (char ch : main)
@@ -18,7 +19,7 @@ bool is_this_balanced(std::string main)
     else{return false;}
 }
 
-bool is_this_real(std::vector<std::string> cooked)
+bool head::is_this_real(std::vector<std::string> cooked)
 {
     int dots = 0;
     for (int i = 0; i < cooked.size(); i++)
@@ -41,7 +42,7 @@ bool is_this_real(std::vector<std::string> cooked)
     return true;
 }
 
-std::vector<std::string> chars_make(std::string main)
+std::vector<std::string> head::chars_make(std::string main)
 {
     std::vector<std::string> cooked = {};
     for (int i = 0; i < main.size(); i++)
@@ -65,7 +66,7 @@ std::vector<std::string> chars_make(std::string main)
     return cooked;
 }
 
-double answer_maker (std::vector<std::string> cooked)
+double head::answer_maker (std::vector<std::string> cooked)
 {
     int begin = 0; int end = 0;
     while (cooked.size() != 1)
@@ -195,7 +196,7 @@ double answer_maker (std::vector<std::string> cooked)
     return answer;
 }
 
-double answer_function(std::string main)
+double head::answer_function(std::string main)
 {
     if (main.empty()) {
         return 0.0; // Или другое значение по умолчанию для пустого ввода
