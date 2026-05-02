@@ -1,11 +1,12 @@
-//
 // Created by kleymuner on 27.03.2026.
-//
 
 #ifndef QT_GUI_PROJECT_BASEWINDOW_H
 #define QT_GUI_PROJECT_BASEWINDOW_H
 
 #include <QMainWindow>
+#include <string>
+#include <QString>
+//#include <map>
 
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +31,9 @@ public:
 private:
     Ui::baseWindow* ui;
     void ini_buttons();
-    void switchToCalculator(int type);
+    void switchToCalculator(std::string type);
+    void toggle_basic_window();
+    void toggle_engineer_window();
 };
 
 

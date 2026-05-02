@@ -1,11 +1,11 @@
-//
 // Created by kleymuner on 27.03.2026.
-//
 
 // You may need to build the project (run Qt uic code generator) to get "ui_baseWindow.h" resolved
 
 #include "basewindow.h"
 #include "ui_baseWindow.h"
+#include <iostream>
+
 
 
 baseWindow::baseWindow(QWidget* parent) :
@@ -14,8 +14,8 @@ baseWindow::baseWindow(QWidget* parent) :
     ui->setupUi(this);
     ini_buttons();
 
-    connect(toggle_basic, &QAction::triggered, this, switchToCalculator(0));
-    connect(toggle_engineer, &QAction::triggered, this, switchToCalculator(1));
+    connect(toggle_basic, &QAction::triggered, this, switchToCalculator("basic"));
+    connect(toggle_engineer, &QAction::triggered, this, switchToCalculator("engineer"));
 }
 
 baseWindow::~baseWindow()
@@ -29,7 +29,18 @@ baseWindow::ini_buttons()
     toggle_engineer = ui->actionEngineer;
 }
 
-baseWindow::switchToCalculator(int type)
+baseWindow::switchToCalculator(std::string type)
 {
-    return;
+    if (type == "basic")
+    {
+        toggle_basic_window();
+    }
+    else if (type == "engineer")
+    {
+        toggle_engineer_window();
+    }
+    else
+    {
+        std::cout <<"What a hell? - basewindow.cpp __ line 45";
+    }
 }
