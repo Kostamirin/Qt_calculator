@@ -12,6 +12,7 @@ baseWindow::baseWindow(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::baseWindow)
 {
     ui->setupUi(this);
+    // connect(actNormal, &QAction::triggered, this, [this](){ switchToCalculator(0); });
 }
 
 baseWindow::~baseWindow()
