@@ -18,3 +18,8 @@ baseWindow::~baseWindow()
 {
     delete ui;
 }
+
+baseWindow::switchToCalculator(int type)
+{
+    return;
+}

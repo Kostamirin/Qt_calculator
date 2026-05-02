@@ -10,11 +10,12 @@
 #include <QLineEdit>
 #include <QAction>
 #include <QString>
+#include "Assets/basewindow.h"
 
 
 namespace Ui { class mainWindow; }
 
-class mainWindow : public QMainWindow
+class mainWindow : public baseWindow
 {
     Q_OBJECT
 public:

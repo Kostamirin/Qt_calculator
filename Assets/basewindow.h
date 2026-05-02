@@ -20,13 +20,16 @@ QT_END_NAMESPACE
 class baseWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
     explicit baseWindow(QWidget* parent = nullptr);
     ~baseWindow() override;
+    // todo Создать функцию переключения между калькуляторами ТУТ
+    // todo Для их функционала использовать
+    // connect(actNormal, &QAction::triggered, this, [this](){ switchToCalculator(0); });
 
 private:
     Ui::baseWindow* ui;
+    void switchToCalculator(int type);
 };
 
 
