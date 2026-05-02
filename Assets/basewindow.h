@@ -6,7 +6,7 @@
 #include <QMainWindow>
 #include <string>
 #include <QString>
-//#include <map>
+
 
 
 QT_BEGIN_NAMESPACE
