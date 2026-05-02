@@ -23,12 +23,13 @@ class baseWindow : public QMainWindow
 public:
     explicit baseWindow(QWidget* parent = nullptr);
     ~baseWindow() override;
-    // todo Создать функцию переключения между калькуляторами ТУТ
-    // todo Для их функционала использовать
-    // connect(actNormal, &QAction::triggered, this, [this](){ switchToCalculator(0); });
+
+    QAction *toggle_basic;
+    QAction *toggle_engineer;
 
 private:
     Ui::baseWindow* ui;
+    void ini_buttons();
     void switchToCalculator(int type);
 };
 

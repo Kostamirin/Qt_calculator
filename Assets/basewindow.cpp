@@ -12,12 +12,21 @@ baseWindow::baseWindow(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::baseWindow)
 {
     ui->setupUi(this);
-    // connect(actNormal, &QAction::triggered, this, [this](){ switchToCalculator(0); });
+    ini_buttons();
+
+    connect(toggle_basic, &QAction::triggered, this, switchToCalculator(0));
+    connect(toggle_engineer, &QAction::triggered, this, switchToCalculator(1));
 }
 
 baseWindow::~baseWindow()
 {
     delete ui;
+}
+
+baseWindow::ini_buttons()
+{
+    toggle_basic = ui->actionBasic;
+    toggle_engineer = ui->actionEngineer;
 }
 
 baseWindow::switchToCalculator(int type)
