@@ -22,4 +22,5 @@ baseWindow::~baseWindow()
 baseWindow::switchToCalculator(int type)
 {
     return;
+
 }
