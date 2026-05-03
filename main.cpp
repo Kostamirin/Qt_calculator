@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
     // todo создать историю
     QApplication mainApp(argc, argv);
 
-
     mainWindow window;
     window.show();
 
