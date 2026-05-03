@@ -7,7 +7,6 @@
 #include <iostream>
 
 
-
 baseWindow::baseWindow(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::baseWindow)
 {
