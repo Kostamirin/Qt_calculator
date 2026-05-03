@@ -22,13 +22,13 @@ baseWindow::~baseWindow()
     delete ui;
 }
 
-baseWindow::ini_buttons()
+void baseWindow::ini_buttons()
 {
     toggle_basic = ui->actionBasic;
     toggle_engineer = ui->actionEngineer;
 }
 
-baseWindow::switchToCalculator(std::string type)
+void baseWindow::switchToCalculator(std::string type)
 {
     if (type == "basic")
     {
