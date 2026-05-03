@@ -42,4 +42,5 @@ void baseWindow::switchToCalculator(std::string type)
     {
         std::cout <<"What a hell? - basewindow.cpp __ line 45";
     }
+
 }
