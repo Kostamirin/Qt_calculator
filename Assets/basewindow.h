@@ -25,6 +25,9 @@ public:
     explicit baseWindow(QWidget* parent = nullptr);
     ~baseWindow() override;
 
+    std::string main_string = ""; //The main string of all stuf
+    std::vector<std::string> history;
+
     QAction *toggle_basic;
     QAction *toggle_engineer;
 

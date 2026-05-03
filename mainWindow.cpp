@@ -9,8 +9,7 @@
 head head;
 
 
-mainWindow::mainWindow (QWidget *parent) :
-    QMainWindow(parent), ui(new Ui::mainWindow)
+mainWindow::mainWindow()
 {
     ui->setupUi(this);
     ini_buttons();
@@ -102,7 +101,7 @@ void mainWindow::minusPressed() {display->setText(display->text() + "-"); }
 void mainWindow::multiplyPressed() {display->setText(display->text() + "*"); }
 void mainWindow::dividePressed() {display->setText(display->text() + "/"); }
 
-void mainWindow::clearPressed() 
+void mainWindow::clearPressed()
 {
     main_string = display->text().toStdString();
      if (!this->main_string.empty())
@@ -117,7 +116,7 @@ void mainWindow::clearPressed()
      display->setText(QString::fromStdString(this->main_string));
 }
 
-void mainWindow::clearallPressed() 
+void mainWindow::clearallPressed()
 {
      display->clear();
      this->history.push_back(this->main_string);

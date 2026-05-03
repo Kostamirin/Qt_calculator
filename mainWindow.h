@@ -23,8 +23,7 @@ public:
     mainWindow(QWidget *parent = nullptr);
     ~mainWindow();
 
-    std::string main_string = ""; //The main string of all stuf
-    std::vector<std::string> history;
+
 
 private slots:
 
@@ -84,9 +83,12 @@ private:
     QPushButton * button_clearall;
 
     QLineEdit * display;  //  Осеовная панель
+    /*
+     * Уже имеется по умолчанию в basewindow.h
+     * QAction * menu_simple;
+     * QAction * menu_engineer;
+     */
 
-    QAction * menu_simple;
-    QAction * menu_engineer;
 };
 
 
