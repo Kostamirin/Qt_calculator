@@ -4,9 +4,8 @@
 #define QT_GUI_PROJECT_BASEWINDOW_H
 
 #include <QMainWindow>
-#include <string>
 #include <QString>
-
+#include <string>
 
 
 QT_BEGIN_NAMESPACE
