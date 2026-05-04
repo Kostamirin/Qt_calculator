@@ -3,9 +3,8 @@
 #ifndef QT_GUI_PROJECT_ENGINEERWINDOW_H
 #define QT_GUI_PROJECT_ENGINEERWINDOW_H
 
-//#include "../Assets/basewindow.h"
 #include "../mainWindow.h"
-#include <qpushbutton.h>
+#include <QPushButton>
 #include <qtconfigmacros.h>
 #include <qtmetamacros.h>
 
@@ -19,7 +18,7 @@ namespace Ui
 
 QT_END_NAMESPACE
 
-class engineerWindow : mainWindow
+class engineerWindow : public mainWindow
 {
     Q_OBJECT
 public:
@@ -27,7 +26,45 @@ public:
     ~engineerWindow();
 
 private slots:
-    // something
+    // Trigonometric functions
+    void sinPressed();
+    void cosPressed();
+    void tanPressed();
+
+    // Inverse trigonometric functions
+    void asinPressed();
+    void acosPressed();
+    void atanPressed();
+
+    // Hyperbolic functions
+    void sinhPressed();
+    void coshPressed();
+    void tanhPressed();
+
+    // Logarithmic functions
+    void lnPressed();      // Natural logarithm
+    void logPressed();     // Base 10 logarithm
+    void log2Pressed();    // Base 2 logarithm
+
+    // Power and root functions
+    void sqrtPressed();    // Square root
+    void cbrtPressed();    // Cube root
+    void powerPressed();   // x^y
+    void expPressed();     // e^x
+
+    // Advanced functions
+    void factorialPressed();  // n!
+    void piPressed();         // π constant
+    void ePressed();          // e constant
+    void modPressed();        // Modulo
+    void absPressed();        // Absolute value
+
+    // Parentheses
+    void leftParenPressed();
+    void rightParenPressed();
+
+    // Degree/Radian toggle
+    void degreeRadianToggle();
 
 private:
     void ini_buttons();
@@ -35,11 +72,47 @@ private:
 
     Ui::engineerWindow *ui;
 
-    // create other buttons here
+    // Trigonometric buttons
     QPushButton *button_sin;
     QPushButton *button_cos;
-    QPushButton *button_tg;
+    QPushButton *button_tan;
 
-}
+    // Inverse trigonometric buttons
+    QPushButton *button_asin;
+    QPushButton *button_acos;
+    QPushButton *button_atan;
+
+    // Hyperbolic buttons
+    QPushButton *button_sinh;
+    QPushButton *button_cosh;
+    QPushButton *button_tanh;
+
+    // Logarithmic buttons
+    QPushButton *button_ln;
+    QPushButton *button_log;
+    QPushButton *button_log2;
+
+    // Power and root buttons
+    QPushButton *button_sqrt;
+    QPushButton *button_cbrt;
+    QPushButton *button_power;
+    QPushButton *button_exp;
+
+    // Advanced function buttons
+    QPushButton *button_factorial;
+    QPushButton *button_pi;
+    QPushButton *button_e;
+    QPushButton *button_mod;
+    QPushButton *button_abs;
+
+    // Parentheses buttons
+    QPushButton *button_left_paren;
+    QPushButton *button_right_paren;
+
+    // Toggle button
+    QPushButton *button_deg_rad;
+
+    bool isRadianMode = true;  // true for radians, false for degrees
+};
 
 #endif // QT_GUI_PROJECT_ENGINEERWINDOW_H
