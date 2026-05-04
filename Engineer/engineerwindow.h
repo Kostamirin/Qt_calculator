@@ -75,17 +75,19 @@ private:
     // Trigonometric buttons
     QPushButton *button_sin;
     QPushButton *button_cos;
-    QPushButton *button_tan;
+    QPushButton *button_tg;
 
     // Inverse trigonometric buttons
     QPushButton *button_asin;
     QPushButton *button_acos;
-    QPushButton *button_atan;
+    QPushButton *button_atg;
 
     // Hyperbolic buttons
-    QPushButton *button_sinh;
-    QPushButton *button_cosh;
-    QPushButton *button_tanh;
+    /*
+     QPushButton *button_sinh;
+     QPushButton *button_cosh;
+     QPushButton *button_tgh;
+     */
 
     // Logarithmic buttons
     QPushButton *button_ln;

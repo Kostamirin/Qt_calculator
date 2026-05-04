@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <stdexcept> // Для std::runtime_error
+
 class head
 {
 public:
@@ -13,7 +14,9 @@ public:
     // Изменяем тип возвращаемого значения на double
     double answer_maker(std::vector<std::string> cooked);
     double answer_function(std::string main);
-};
+private:
+    std::string history;
+}
 
 
 #endif //QT_CALCULATOR_HEAD_H
