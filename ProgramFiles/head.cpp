@@ -1,11 +1,11 @@
 // Created by kleymuner2131 on 12.04.25.
-#include "head.h"
 #include <string>
 #include <vector>
 #include <stdexcept> // Для исключений
 #include <QString>
-#include <limits>  // Для std::numeric_limits
-#include <cmath>   // Для std::isnan
+#include "head.h"
+//#include <limits>  // Для std::numeric_limits
+//#include <cmath>   // Для std::isnan
 
 bool head::is_this_balanced(std::string main)
 {

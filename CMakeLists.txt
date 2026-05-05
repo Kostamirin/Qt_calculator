@@ -29,7 +29,8 @@ add_executable(QT_GUI_project
         #Assets/basewindow.ui
 )
 
-target_link_libraries(QT_GUI_project
+target_link_libraries(
+  QT_GUI_project
   Qt::Core
   Qt::Gui
   Qt::Widgets
