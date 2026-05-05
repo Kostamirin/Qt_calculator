@@ -26,9 +26,11 @@
 *.la
 *.a
 *.lib
+.qtcreator
+cmake-guild-debug
+build
 
 # Executables
 *.exe
 *.out
 *.app
-
