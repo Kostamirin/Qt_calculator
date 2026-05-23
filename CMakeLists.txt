@@ -1,37 +1,74 @@
-cmake_minimum_required(VERSION 3.28)
-project(QT_GUI_project)
+cmake_minimum_required(VERSION 3.16)
 
-set(CMAKE_CXX_STANDARD 20)
+project(QT_creator_project VERSION 0.1 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # Add this line
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS
-  Core
-  Gui
-  Widgets
-  REQUIRED)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
-add_executable(QT_GUI_project
+set(PROJECT_SOURCES
         main.cpp
-        Progressions/secondwindow.cpp
-        ProgramFiles/head.cpp
-        Progressions/arithmetic_progression.cpp
-        Progressions/geometric_progression.cpp
-        mainWindow.cpp
-        mainWindow.h
-        Functions/functions.cpp
-        Functions/functions.h
-        #Assets/basewindow.cpp
-        #Assets/basewindow.h
-        #Assets/basewindow.ui
+        basewindow.cpp
+        basewindow.h
+        basewindow.ui
 )
 
-target_link_libraries(
-  QT_GUI_project
-  Qt::Core
-  Qt::Gui
-  Qt::Widgets
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(QT_creator_project
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        mainwindow.h mainwindow.cpp mainwindow.ui
+        engineerwindow.h engineerwindow.cpp engineerwindow.ui
+        ./head/head.h ./head/head.cpp
+        ./progression/
+    )
+# Define target properties for Android with Qt 6 as:
+#    set_property(TARGET QT_creator_project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
+#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
+# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
+else()
+    if(ANDROID)
+        add_library(QT_creator_project SHARED
+            ${PROJECT_SOURCES}
+        )
+# Define properties for Android with Qt 5 after find_package() calls as:
+#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
+    else()
+        add_executable(QT_creator_project
+            ${PROJECT_SOURCES}
+        )
+    endif()
+endif()
+
+target_link_libraries(QT_creator_project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+if(${QT_VERSION} VERSION_LESS 6.1.0)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.QT_creator_project)
+endif()
+set_target_properties(QT_creator_project PROPERTIES
+    ${BUNDLE_ID_OPTION}
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
 )
+
+include(GNUInstallDirs)
+install(TARGETS QT_creator_project
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(QT_creator_project)
+endif()

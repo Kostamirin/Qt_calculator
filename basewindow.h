@@ -3,9 +3,11 @@
 #ifndef QT_GUI_PROJECT_BASEWINDOW_H
 #define QT_GUI_PROJECT_BASEWINDOW_H
 
+#include <QAction>
 #include <QMainWindow>
 #include <QString>
 #include <string>
+#include <vector>
 
 
 QT_BEGIN_NAMESPACE
@@ -30,10 +32,16 @@ public:
     QAction *toggle_basic;
     QAction *toggle_engineer;
 
+private slots: // from QT_creator with love
+    void on_actionBasic_triggered();
+
+    void on_actionEngineer_triggered();
+
 private:
     Ui::baseWindow* ui;
     void ini_buttons();
     void switchToCalculator(std::string type);
+
     void toggle_basic_window();
     void toggle_engineer_window();
 };

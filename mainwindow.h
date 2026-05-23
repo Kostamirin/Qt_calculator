@@ -10,17 +10,19 @@
 #include <QLineEdit>
 #include <QAction>
 #include <QString>
-#include "Assets/basewindow.h"
+#include "basewindow.h"
 
 
-namespace Ui { class mainWindow; }
+namespace Ui
+{
+    class mainWindow;
+}
 
 class mainWindow : public baseWindow
 {
     Q_OBJECT
 public:
-
-    mainWindow(QWidget *parent = nullptr);
+    explicit mainWindow(QWidget *parent = nullptr);
     ~mainWindow();
 
 
@@ -54,10 +56,12 @@ private slots:
     void menu_simple_pressed();
     void menu_engineer_pressed();
 
+    void on_pushButton_0_clicked();
+
 private:
 
     void ini_buttons();
-    void ini_fuctional();
+    // void ini_fuctional();
 
     Ui::mainWindow *ui; // Указатель на UI
 
@@ -84,7 +88,7 @@ private:
 
     QLineEdit * display;  //  Осеовная панель
     /*
-     * Уже имеется по умолчанию в basewindow.h
+     * Уже имеется по умолчанию в basewindow.h за счет QT creator
      * QAction * menu_simple;
      * QAction * menu_engineer;
      */

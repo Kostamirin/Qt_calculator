@@ -1,33 +1,28 @@
 // Created by kleymuner on 27.03.2026.
 
-// You may need to build the project (run Qt uic code generator) to get "ui_baseWindow.h" resolved
 
-#include "basewindow.h"
-#include "ui_baseWindow.h"
 #include <iostream>
+#include "basewindow.h"
+#include "ui_basewindow.h"
 
 
 baseWindow::baseWindow(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::baseWindow)
 {
-    ui->setupUi(this);
-    ini_buttons();
 
-    connect(toggle_basic, &QAction::triggered, this, switchToCalculator("basic"));
-    connect(toggle_engineer, &QAction::triggered, this, switchToCalculator("engineer"));
 }
 
 baseWindow::~baseWindow()
 {
-    delete ui;
+    //delete ui;
 }
-
+/*
 void baseWindow::ini_buttons()
 {
     toggle_basic = ui->actionBasic;
     toggle_engineer = ui->actionEngineer;
 }
-
+*/
 void baseWindow::switchToCalculator(std::string type)
 {
     if (type == "basic")
@@ -44,3 +39,15 @@ void baseWindow::switchToCalculator(std::string type)
     }
 
 }
+
+void baseWindow::on_actionBasic_triggered()
+{
+    switchToCalculator("basic");
+}
+
+
+void baseWindow::on_actionEngineer_triggered()
+{
+    switchToCalculator("engineer");
+}
+
