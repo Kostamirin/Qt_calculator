@@ -1,5 +1,0 @@
-/home/kleymuner/CLionProjects/Qt_calculator/build/CMakeFiles/QT_GUI_project.dir
-/home/kleymuner/CLionProjects/Qt_calculator/build/CMakeFiles/edit_cache.dir
-/home/kleymuner/CLionProjects/Qt_calculator/build/CMakeFiles/rebuild_cache.dir
-/home/kleymuner/CLionProjects/Qt_calculator/build/CMakeFiles/QT_GUI_project_autogen_timestamp_deps.dir
-/home/kleymuner/CLionProjects/Qt_calculator/build/CMakeFiles/QT_GUI_project_autogen.dir

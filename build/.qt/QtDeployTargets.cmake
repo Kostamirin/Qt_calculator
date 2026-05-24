@@ -1,2 +1,0 @@
-set(__QT_DEPLOY_TARGET_QT_GUI_project_FILE /home/kleymuner/CLionProjects/Qt_calculator/build/QT_GUI_project)
-set(__QT_DEPLOY_TARGET_QT_GUI_project_TYPE EXECUTABLE)
