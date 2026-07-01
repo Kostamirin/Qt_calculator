@@ -2,11 +2,12 @@
 #include "mainwindow.h"
 
 #include <QApplication>
+#include <cstdlib>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QWidget w;
-    w.show();
+    QMainWindow w;
+    w->show();
     return QCoreApplication::exec();
 }

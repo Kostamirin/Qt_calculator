@@ -16,7 +16,7 @@ public:
     double answer_function(std::string main);
 private:
     std::string history;
-}
+};
 
 
 #endif //QT_CALCULATOR_HEAD_H

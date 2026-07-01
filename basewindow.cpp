@@ -1,6 +1,5 @@
 // Created by kleymuner on 27.03.2026.
 
-
 #include <iostream>
 #include "basewindow.h"
 #include "ui_basewindow.h"
@@ -40,6 +39,16 @@ void baseWindow::switchToCalculator(std::string type)
 
 }
 
+void baseWindow::toggle_basic_window()
+{
+
+}
+
+void baseWindow::toggle_engineer_window()
+{
+
+}
+
 void baseWindow::on_actionBasic_triggered()
 {
     switchToCalculator("basic");
@@ -50,4 +59,3 @@ void baseWindow::on_actionEngineer_triggered()
 {
     switchToCalculator("engineer");
 }
-

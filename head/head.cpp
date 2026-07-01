@@ -107,6 +107,7 @@ double head::answer_maker (std::vector<std::string> cooked)
                     {
                         // Вместо QMessageBox и NaN, выбрасываем исключение
                         throw std::runtime_error("Division by zero");
+                        return 0;
                     }
                 }
             }
